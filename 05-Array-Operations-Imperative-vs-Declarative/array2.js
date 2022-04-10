@@ -97,8 +97,26 @@ const microphone = {
   },
   stopRecording: () => {
     console.log("recording stopped");
+  },
+  toString() {
+    return this;
   }
 };
+
+Object.freeze(microphone);
+microphone.newProperty = "my new property";
+// console.log(microphone);
+
+// console.log(Object.keys(microphone));
+// console.log((Object.values(microphone)));
+
+for (let k in microphone) {
+  // console.log(k, microphone[k]);
+}
+
+const empty = {};
+// console.log(Object.keys(empty).length === 0);
+console.log(Object.entries(microphone));
 
 /**
  * There are two different parts in Object
@@ -110,4 +128,9 @@ const microphone = {
 const testObj = new Object();
 testObj.name = "Test Object";
 testObj.time = new Date();
-console.log(testObj);
+// console.log(testObj);
+// console.log("My microphone = " + microphone);
+
+// console.log(microphone.length);
+
+// how to use object instead of array
