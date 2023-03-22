@@ -28,7 +28,19 @@ const getUserById = async (req, res, next) => {
   }
 }
 
+const postUser = async (req, res, next) => {
+  const { name, email, password, roles, accountStatus } = req.body;
+
+  try {
+    const user = await authService.registerService({ name, email, password, roles, accountStatus });
+    return res.status(201).json(user);
+  } catch (e) {
+    next(e);
+  }
+}
+
 module.exports = {
   getUsers,
-  getUserById
+  getUserById,
+  postUser,
 }

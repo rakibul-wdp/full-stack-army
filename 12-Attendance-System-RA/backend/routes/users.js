@@ -38,6 +38,6 @@ router.get("/", userController.getUsers);
 /**
  * Create a new user
  */
-router.post("/", () => { });
+router.post("/", userController.postUser);
 
 module.exports = router;
