@@ -4,7 +4,7 @@ const userController = require("../controller/users");
 /**
  * Get user by id or email
  */
-router.get("/:userId", () => { });
+router.get("/:userId", userController.getUserById);
 
 /**
  * Update user by id
