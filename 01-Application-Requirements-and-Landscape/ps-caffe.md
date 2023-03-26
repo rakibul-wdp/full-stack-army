@@ -18,7 +18,7 @@
   </ul>
 </details>
 <details>
-  <summary>Multiple Roles</summary>
+  <summary>Multiple Roles (Role Based Access Control)</summary>
 
   <p>There will be mainly five roles -</p>
   <ul>
@@ -31,6 +31,10 @@
 </details>
 <details>
   <summary>User will be able to place orders</summary>
+
+</details>
+<details>
+  <summary>User will be able to see existing reviews only place review after a successful order</summary>
 
 </details>
 <details>
@@ -72,3 +76,6 @@
   <summary>scalability (not main concern for mvp)</summary>
 
 </details>
+
+##### 99.999999999% (11-9 concept - most available)
+##### 99.99% (available but not up to the mark)
