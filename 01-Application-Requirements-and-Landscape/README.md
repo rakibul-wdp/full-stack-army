@@ -20,6 +20,14 @@
 <details>
   <summary>Multiple Roles</summary>
 
+  <p>There will be mainly five roles -</p>
+  <ul>
+    <li>Admin: Admin can create and manage everything including sales data</li>
+    <li>Manager: Manager can't be able to create anything but can see sales data, inventory and products</li>
+    <li>Chef: They can only see queue orders</li>
+    <li>DeliveryMan: They can manage the queue orders and change status</li>
+    <li>User: won't able to see any admin information but able to check products, reviews and place orders.</li>
+  </ul>
 </details>
 <details>
   <summary>User will be able to place orders</summary>
