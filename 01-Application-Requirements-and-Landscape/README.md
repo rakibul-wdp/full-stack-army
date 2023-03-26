@@ -8,7 +8,11 @@
 <details>
   <summary>Local Authentication</summary>
 
-
+  <p>At the beginning we don't want to spend more on authentication services. Just keep it simple by implementing a local authentication using email & password. But make sure, we can extend local auth to OAuth2 anytime in future. We need to following features -</p>
+  - Hashed password
+  - Email verification
+  - Forget password
+  - Block users if necessary
 </details>
 <details>
   <summary>Multiple Roles</summary>
