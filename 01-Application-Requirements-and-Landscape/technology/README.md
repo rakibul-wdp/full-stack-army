@@ -15,7 +15,20 @@ Requirement Sample: [iTest Software Requirements Specification](https://itest.so
     - Microservice
       - Very hard to develop, but easy to maintain
     - Serverless (Faas - Function As A Service)
-  - 
+  - Select Database
+    - SQL
+      - PostGreSQL
+      - MySQL
+    - NoSQL
+      - MongoDB
+      - Casandra
+    - Key Value
+      - Redis
+      - DynamoDB
+    - Graph Database
+      - Neo4j
+    - Search Database
+      - Elastic Search
 - Software Architecture
   - OOP
   - OOP Design Pattern & Principles
