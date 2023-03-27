@@ -73,7 +73,7 @@
 
 </details>
 <details>
-  <summary>scalability (not main concern for mvp)</summary>
+  <summary>high scalability (not main concern for mvp)</summary>
 
 </details>
 

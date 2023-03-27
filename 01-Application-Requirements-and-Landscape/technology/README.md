@@ -9,6 +9,13 @@ Requirement Sample: [iTest Software Requirements Specification](https://itest.so
 
 ### Requirements Analysis & Design:
 - System Design
+  - Architectural Decision
+    - Monolithic (Layered)
+      - Easy to develop, but very complex to maintain when application grows.
+    - Microservice
+      - Very hard to develop, but easy to maintain
+    - Serverless (Faas - Function As A Service)
+  - 
 - Software Architecture
   - OOP
   - OOP Design Pattern & Principles
