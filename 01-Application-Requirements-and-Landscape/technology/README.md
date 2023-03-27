@@ -28,7 +28,8 @@ Requirement Sample: [iTest Software Requirements Specification](https://itest.so
     - Graph Database
       - Neo4j
     - Search Database
-      - Elastic Search
+      - Elastic Search (Open source - Full Text Search)
+      - Algolia Search (Open AI 3 - Natural Language Processing)
 - Software Architecture
   - OOP
   - OOP Design Pattern & Principles
@@ -37,4 +38,20 @@ Requirement Sample: [iTest Software Requirements Specification](https://itest.so
   - problem Solving
 - Testing
 - Distribution
+  - DevOps
+  - Cloud Engineering
+    - VPC (Virtual Private Cloud)
+    - EC2 (Elastic Computing Cloud)
+    - S3 (Simple Storage Service)
+    - RDS (Relational Database Service)
+    - DynamoDB
+    - Route 53
+    - CloudFront (CDN)
+    - SES (Simple Email Service)
+    - SNS (Simple Notification Service)
+    - SQS (Simple Queue Service)
+    - API Gateway
+    - Lambda
+    - Step Function
+    - Cloud Watch
 - Maintenance
