@@ -72,3 +72,15 @@ Requirement Sample: [iTest Software Requirements Specification](https://itest.so
 - Architecture - Monolithic
 - Database - NoSQL (MongoDB Atlas)
 - Backend - NodeJS (Express, Hapi, Fastify) (MVC)
+
+### Steps:
+- Requirements
+- Design
+- Implementation
+  - UI/UX Design
+  - Web Design
+  - Frontend Development
+  - Backend Development
+  - Test Code
+- Testing, Deployment
+- Maintenance
