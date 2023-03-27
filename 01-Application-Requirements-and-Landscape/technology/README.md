@@ -38,6 +38,8 @@ Requirement Sample: [iTest Software Requirements Specification](https://itest.so
   - Clean Code Architecture
   - problem Solving
 - Testing
+  - Test Driven Development
+  - E2E (End to End)
 - Distribution
   - DevOps
     - Continuous
