@@ -8,8 +8,13 @@ Requirement Sample: [iTest Software Requirements Specification](https://itest.so
 - [Draw.io](https://app.diagrams.net), Lucid Chart (paid)
 
 ### Requirements Analysis & Design:
-- Software Architecture
 - System Design
+- Software Architecture
+  - OOP
+  - OOP Design Pattern & Principles
+  - DSA
+  - Clean Code Architecture
+  - problem Solving
 - Testing
 - Distribution
 - Maintenance
