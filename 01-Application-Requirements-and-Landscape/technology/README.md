@@ -8,6 +8,7 @@ Requirement Sample: [iTest Software Requirements Specification](https://itest.so
 - [Draw.io](https://app.diagrams.net), Lucid Chart (paid)
 
 ### Requirements Analysis & Design:
+
 - System Design
   - Architectural Decision
     - Monolithic (Layered)
@@ -39,6 +40,14 @@ Requirement Sample: [iTest Software Requirements Specification](https://itest.so
 - Testing
 - Distribution
   - DevOps
+    - Continuous
+      - Git & GitHub
+      - Linux, SSH
+      - Circle CI, Travis CI, Jenkins
+      - Docker, Docker Compose
+      - Docker Swam, Kubernetes
+      - Prometheus, Nagios
+      - Ansible
   - Cloud Engineering
     - VPC (Virtual Private Cloud)
     - EC2 (Elastic Computing Cloud)
@@ -54,4 +63,5 @@ Requirement Sample: [iTest Software Requirements Specification](https://itest.so
     - Lambda
     - Step Function
     - Cloud Watch
+    - Cloud Formation, Terraform, CDK
 - Maintenance
