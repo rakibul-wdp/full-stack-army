@@ -67,3 +67,8 @@ Requirement Sample: [iTest Software Requirements Specification](https://itest.so
     - Cloud Watch
     - Cloud Formation, Terraform, CDK
 - Maintenance
+
+### Our Decision For PS Caffe:
+- Architecture - Monolithic
+- Database - NoSQL (MongoDB Atlas)
+- Backend - NodeJS (Express, Hapi, Fastify) (MVC)
