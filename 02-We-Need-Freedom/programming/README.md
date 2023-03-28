@@ -63,3 +63,23 @@
 - Event (Languages: JavaScript, Python, Ruby, PHP, C#, C++, C)
 - Event handler (Languages: JavaScript, Python, Ruby, PHP, C#, C++, C)
 - Event loop (Languages: JavaScript, Python, Ruby, PHP, C#, C++, C)
+
+### Logic Programming
+- Prolog (Languages: Prolog)
+- Horn clauses (Languages: Prolog)
+- Backward chaining (Languages: Prolog)
+
+### Concurrent Programming
+- Threads (Languages: Java, C#, C++, C, Python, Ruby, PHP, JavaScript)
+- Locks (Languages: Java, C#, C++, C, Python, Ruby, PHP, JavaScript)
+- Semaphores (Languages: Java, C#, C++, C, Python, Ruby, PHP, JavaScript)
+
+### Meta Programming
+- Macros (Languages: Lisp, Scheme, Clojure, F#, C#, C++, C, Python, Ruby, PHP, JavaScript)
+- Reflection (Languages: Lisp, Scheme, Clojure, F#, C#, C++, C, Python, Ruby, PHP, JavaScript)
+- Code generation (Languages: Lisp, Scheme, Clojure, F#, C#, C++, C, Python, Ruby, PHP, JavaScript)
+
+### Functional Reactive Programming
+- Functional Reactive Programming (Languages: Elm, ClojureScript, F#, C#, C++, C, Python, Ruby, PHP, JavaScript)
+- Reactive (Languages: Elm, ClojureScript, F#, C#, C++, C, Python, Ruby, PHP, JavaScript)
+- Programming (Languages: Elm, ClojureScript, F#, C#, C++, C, Python, Ruby, PHP, JavaScript)
