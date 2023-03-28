@@ -1,3 +1,5 @@
+# We Need Freedom, We have to Stop Technology War
+
 ### Todays Agenda:
 - We need freedom, we have to stop technology war
 - Why do we need programming languages?
