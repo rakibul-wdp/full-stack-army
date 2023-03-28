@@ -37,3 +37,16 @@
 - Functional Reactive
   - Functional Reactive Programming (FRP) is a programming paradigm for reactive programming using the building blocks of functional programming (e.g. pure functions, immutable data, higher-order functions, recursion).
   - Functional Reactive Programming languages include Elm, ClojureScript, F#, C#, C++, C, Python, Ruby, PHP, and JavaScript.
+
+### Imperative vs Declarative
+- Imperative: How to do something
+- Declarative: What to do
+
+### Functional Programming
+- Pure functions (Languages: Haskell, Erlang, Clojure, F#)
+- No side effects (Languages: Haskell, Erlang, Clojure, F#)
+- Immutable data (Languages: Haskell, Erlang, Clojure, F#)
+- Recursion (Language: Haskell, Erlang, Clojure, F#)
+- Higher-order functions (Languages: Haskell, Erlang, Clojure, F#)
+
+### 
