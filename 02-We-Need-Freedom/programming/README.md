@@ -49,4 +49,17 @@
 - Recursion (Language: Haskell, Erlang, Clojure, F#)
 - Higher-order functions (Languages: Haskell, Erlang, Clojure, F#)
 
-### 
+### Object-Oriented Programming
+- Encapsulation (Languages: Java, C++, C#, Python, Ruby, PHP, JavaScript)
+- Inheritance (Languages: Java, C++, C#, Python, Ruby, PHP, JavaScript)
+- Polymorphism (Languages: Java, C++, C#, Python, Ruby, PHP, JavaScript)
+
+### Procedural Programming
+- Functions (Languages: C, C++, C#, Python, Ruby, PHP, JavaScript)
+- Procedures (Languages: C, C++, C#, Python, Ruby, PHP, JavaScript)
+- Subroutines (Languages: C, C++, C#, Python, Ruby, PHP, JavaScript)
+
+### Event-Driven Programming
+- Event (Languages: JavaScript, Python, Ruby, PHP, C#, C++, C)
+- Event handler (Languages: JavaScript, Python, Ruby, PHP, C#, C++, C)
+- Event loop (Languages: JavaScript, Python, Ruby, PHP, C#, C++, C)
