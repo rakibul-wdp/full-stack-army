@@ -10,12 +10,12 @@
 <details>
   <summary>Operators</summary>
 
-  <p></p>
+  <p>mathematical representations</p>
 </details>
 <details>
   <summary>Conditions</summary>
 
-  <p></p>
+  <p>Brain of a computer.</p>
 </details>
 <details>
   <summary>Loops</summary>
