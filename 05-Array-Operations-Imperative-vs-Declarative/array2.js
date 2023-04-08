@@ -46,3 +46,32 @@ function fib(n) {
 }
 
 // console.log(fib(55));
+
+const arr2 = [
+  { id: 1, value: 10 },
+  { id: 2, value: 20 },
+  { id: 3, value: 30 },
+  { id: 4, value: 40 },
+  { id: 5, value: 50 },
+];
+
+const index = arr2.findIndex(function (v) {
+  return v.id === 4;
+});
+arr2[index].value = 400;
+// console.log(arr2);
+
+const obj = arr2.find(function (v) {
+  return v.id === 4;
+});
+// console.log(obj);
+// console.log(arr2);
+
+const obj2 = arr2[2];
+obj2.value = 300;
+// console.log(arr2)
+
+const a = { a: 10 },
+  b = { a: 10 };
+const c = a;
+console.log(a === c);
