@@ -74,4 +74,14 @@ obj2.value = 300;
 const a = { a: 10 },
   b = { a: 10 };
 const c = a;
-console.log(a === c);
+// console.log(a === c);
+
+// splice -> mutable
+const index2 = arr.findIndex((item) => item.id === 4);
+const arr3 = arr2.splice(index, 1);
+// console.log(arr3);
+
+// filter -> immutable
+const arr4 = arr2.filter((item) => item.id !== 4);
+console.log(arr2);
+console.log(arr4);
