@@ -134,3 +134,4 @@ testObj.time = new Date();
 // console.log(microphone.length);
 
 // how to use object instead of array
+// because it's boost performance and code will easy
