@@ -83,5 +83,31 @@ const arr3 = arr2.splice(index, 1);
 
 // filter -> immutable
 const arr4 = arr2.filter((item) => item.id !== 4);
-console.log(arr2);
-console.log(arr4);
+// console.log(arr2);
+// console.log(arr4);
+
+// object literal
+const microphone = {
+  brand: "Fifine",
+  indicator: true,
+  price: 8000,
+  color: "Black",
+  startRecording() {
+    console.log("recoding started");
+  },
+  stopRecording: () => {
+    console.log("recording stopped");
+  }
+};
+
+/**
+ * There are two different parts in Object
+ * 1. Noun / Adjective (State/data/property/field)
+ * 2. Verb / (functionalities -> start, stop)
+ */
+
+// constructor function
+const testObj = new Object();
+testObj.name = "Test Object";
+testObj.time = new Date();
+console.log(testObj);
