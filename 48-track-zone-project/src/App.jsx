@@ -3,25 +3,14 @@ import LocalClock from "./components/local-clock";
 import useClock from "./hooks/useClock";
 
 const App = () => {
-  const { clock: local } = useClock();
-  const { clock: est } = useClock("EST");
-  const { clock: pst } = useClock("PST");
-  const { clock: pakistan } = useClock("UTC", 5 * 60);
-  const { clock: edt } = useClock("EDT");
-  const { clock: bst } = useClock("BST");
-  const { clock: mst } = useClock("MST");
-
-  console.log("local=>", local.date);
-  console.log("est=>", est.date);
-  console.log("pst=>", pst.date);
-  console.log("pakistan=>", pakistan.date);
-  console.log("edt=>", edt.date);
-  console.log("bst=>", bst.date);
-  console.log("mst=>", mst.date);
+  const { date: localDate, timezone, offset } = useClock();
+  console.log(localDate);
 
   return (
     <div>
-      <LocalClock />
+      {localDate !== null && (
+        <LocalClock date={localDate} timezone={timezone} offset={offset} />
+      )}
       <ClockList />
     </div>
   );

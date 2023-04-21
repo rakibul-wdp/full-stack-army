@@ -23,13 +23,14 @@ const useClock = (timezone, offset = 0) => {
   }, []);
 
   useEffect(() => {
-    if (utc !== null && timezone) {
+    if (utc !== null) {
       offset = TIMEZONE_OFFSET[timezone] ?? offset;
       const newUtc = addMinutes(utc, offset);
       setLocalDate(newUtc);
     } else {
-      const newUtc = addMinutes(utc, localOffset);
+      const newUtc = addMinutes(utc, -localOffset);
       setLocalDate(newUtc);
+      // TODO: find timezone
     }
   }, [utc]);
 

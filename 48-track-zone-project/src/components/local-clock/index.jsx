@@ -1,7 +1,14 @@
-const LocalClock = () => {
+import ClockDisplay from "../shared/clock-display";
+
+const LocalClock = ({ date, timezone, offset }) => {
   return (
     <div>
-      <h1>I am local clock</h1>
+      <ClockDisplay
+        date={date}
+        title={"My Clock"}
+        timezone={timezone}
+        offset={offset}
+      />
     </div>
   );
 };
