@@ -26,22 +26,19 @@ const useClock = (timezone, offset = 0) => {
     if (utc !== null && timezone) {
       offset = TIMEZONE_OFFSET[timezone] ?? offset;
       const newUtc = addMinutes(utc, offset);
-      setState({
-        ...state,
-        date_utc: utc,
-        date: newUtc,
-      });
+      setLocalDate(newUtc);
     } else {
-      setState({
-        ...state,
-        date_utc: utc,
-        date: utc,
-      });
+      const newUtc = addMinutes(utc, localOffset);
+      setLocalDate(newUtc);
     }
   }, [utc]);
 
   return {
-    clock: state,
+    date: localDate,
+    dateUTC: utc,
+    offset,
+    timezone,
+    localOffset,
   };
 };
 
