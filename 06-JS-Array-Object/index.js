@@ -14,3 +14,21 @@ function uuidv4() {
   });
 };
 
+const students = [
+  {
+    id: 'd77b9648-8916-4988-ab8e-3bb9b3cc5dd5',
+    name: 'Abul',
+    email: 'abul@gmail.com'
+  },
+  {
+    id: 'a4028586-fd46-4eca-94b2-bc0bb32e0594',
+    name: 'Babul',
+    email: 'babul@gmail.com'
+  },
+  {
+    id: '93b6f2df-0695-4faa-b4e4-11f435f65072',
+    name: 'Cabul',
+    email: 'Cabul@gmail.com'
+  }
+];
+
