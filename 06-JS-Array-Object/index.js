@@ -32,3 +32,20 @@ const students = [
   }
 ];
 
+/**
+ * 1. Easily Traverse
+ * 2. Filter
+ * 3. Delete
+ * 4. Update
+ * 5. Create a new one (easy)
+ */
+
+// create a new student
+// students.unshift() // unshift is expensive task
+students.push({
+  id: uuidv4(),
+  name: "Dabul",
+  email: "dabul@gmail.com"
+})
+
+console.log(students);
