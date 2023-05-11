@@ -36,8 +36,8 @@ const students = [
  * 1. Easily Traverse
  * 2. Filter
  * 3. Delete
- * 4. Update
- * 5. Create a new one (easy)
+ * 4. Update (medium) (easy) [push -> O(n)]
+ * 5. Create a new one (easy) [push -> O(1), unshift -> O(n)]
  */
 
 // create a new student
@@ -46,6 +46,18 @@ students.push({
   id: uuidv4(),
   name: "Dabul",
   email: "dabul@gmail.com"
-})
+});
+
+// update
+const idToUpdate = "93b6f2df-0695-4faa-b4e4-11f435f65072";
+const updatedData = {
+  name: "Ebul",
+  // email: "ebul@gmail.com"
+};
+const updatedIndex = students.findIndex((item) => item.id === idToUpdate);
+students[updatedIndex] = {
+  ...students[updatedIndex],
+  ...updatedData,
+}
 
 console.log(students);
