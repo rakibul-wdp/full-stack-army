@@ -29,7 +29,7 @@ const students = {
  * 1. Easily Traverse (O(n))
  * 2. Filter
  * 3. Delete (medium) [splice -> O(n), filter -> O(n)]
- * 4. Update (medium) [push -> O(n)]
+ * 4. Update (medium) O(1)
  * 5. Create a new one (easy) O(1)
  */
 
@@ -40,5 +40,16 @@ const std = {
 };
 
 students[std.id] = std;
+
+const idToBeUpdated = "93b6f2df-0695-4faa-b4e4-11f435f65072";
+const updatedData = {
+  name: "Ebul",
+  email: "ebul@gmail.com"
+};
+
+students[idToBeUpdated] = {
+  ...students[idToBeUpdated],
+  ...updatedData,
+};
 
 console.log(students);
