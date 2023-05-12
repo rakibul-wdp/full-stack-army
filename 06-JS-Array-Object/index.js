@@ -35,8 +35,8 @@ const students = [
 /**
  * 1. Easily Traverse
  * 2. Filter
- * 3. Delete
- * 4. Update (medium) (easy) [push -> O(n)]
+ * 3. Delete (medium) [splice -> O(n), filter -> O(n)]
+ * 4. Update (medium) [push -> O(n)]
  * 5. Create a new one (easy) [push -> O(1), unshift -> O(n)]
  */
 
@@ -60,4 +60,22 @@ students[updatedIndex] = {
   ...updatedData,
 }
 
-console.log(students);
+// console.log("updated", students);
+
+// delete
+students.splice(updatedIndex, 1);
+// console.log("deleted", students);
+
+// forEach, map, filter, every, reduce, some, find, findIndex
+
+for (let i = 0; i < students.length; i++) {
+  // console.log(students[i].name);
+}
+
+for (let i in students) {
+  // console.log(students[i].name);
+}
+
+for (let student of students) {
+  console.log(student.name);
+}
