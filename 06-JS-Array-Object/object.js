@@ -27,6 +27,7 @@ const students = {
 
 /**
  * 1. Easily Traverse (O(n))
+ * 1.1 Get anything if you have the id/key: O(1)
  * 2. Filter
  * 3. Delete (medium) O(1)
  * 4. Update (medium) O(1)
@@ -52,6 +53,14 @@ students[idToBeUpdated] = {
   ...updatedData,
 };
 
-delete students[idToBeUpdated];
+// delete students[idToBeUpdated];
 
-console.log(students);
+// console.log(students["d77b9648-8916-4988-ab8e-3bb9b3cc5dd5"]);
+
+for (let key in students) {
+  // console.log(students[key].email);
+}
+
+Object.values(students).forEach((student) => {
+  console.log(student.name, student.email);
+});
