@@ -10,15 +10,10 @@ for (let i = 0; i < 5000000; i++) {
 };
 
 console.time("find");
-arr.unshift({
-  id: 5000000,
-  value: 5000000,
-})
+const index = arr.findIndex((item) => item.id === 4000000);
+arr.splice(index, 1);
 console.timeEnd("find");
 
 console.time("obj");
-arrToObj[5000000] = {
-  id: 5000000,
-  value: 5000000,
-}
+delete arrToObj[4000000];
 console.timeEnd("obj");
