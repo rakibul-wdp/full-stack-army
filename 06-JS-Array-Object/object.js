@@ -28,7 +28,7 @@ const students = {
 /**
  * 1. Easily Traverse (O(n))
  * 2. Filter
- * 3. Delete (medium) [splice -> O(n), filter -> O(n)]
+ * 3. Delete (medium) O(1)
  * 4. Update (medium) O(1)
  * 5. Create a new one (easy) O(1)
  */
@@ -51,5 +51,7 @@ students[idToBeUpdated] = {
   ...students[idToBeUpdated],
   ...updatedData,
 };
+
+delete students[idToBeUpdated];
 
 console.log(students);
