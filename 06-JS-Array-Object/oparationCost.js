@@ -10,11 +10,15 @@ for (let i = 0; i < 5000000; i++) {
 };
 
 console.time("find");
-let id = 4999999;
-const obj = arr.find((item) => item.id === id);
-obj.value = 555;
+arr.unshift({
+  id: 5000000,
+  value: 5000000,
+})
 console.timeEnd("find");
 
 console.time("obj");
-arrToObj[id].value = 4999999;
+arrToObj[5000000] = {
+  id: 5000000,
+  value: 5000000,
+}
 console.timeEnd("obj");
