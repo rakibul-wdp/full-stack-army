@@ -10,12 +10,11 @@ const numbers = [1, 2, 3, 4, false, "", NaN, 5, 6];
 
 // we want this -> "1234falseNaN56"
 const result = numbers.reduce((acc, cur, index) => {
-  if (index === 0) acc += "[";
+  console.log(acc, cur, index);
   if (cur) {
-    acc += cur.toString() + (index < numbers.length - 1 ? ", " : "");
+    acc.push(cur.toString());
   }
-  if (index === numbers.length - 1) acc += "]";
   return acc;
-}, "");
+}, []);
 
 console.log(result);
