@@ -9,7 +9,7 @@ console.timeEnd("not-optimized");
 
 console.time("optimized");
 arr.reduce((acc, cur) => {
-  if (cur) {
+  if (cur % 2 === 0) {
     acc.push(cur * 2);
   }
   return acc;
