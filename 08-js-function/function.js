@@ -27,6 +27,27 @@ function jobholderLifecycle(name) {
   sleep(name);
 }
 
+jobholderLifecycle("Abul");
+console.log("-------------")
+jobholderLifecycle("Babul");
+
+function studentsLifecycle(name) {
+  awake(name);
+  eat(name, "breakfast");
+  study(name);
+  eat(name, "lunch");
+  study(name)
+  eat(name, "dinner");
+  sleep(name);
+}
+
+console.log("-------------")
+console.log("students lifecycle");
+console.log("-------------")
+studentsLifecycle("Cabul");
+console.log("-------------")
+studentsLifecycle("Dabul");
+
 function sleep(name) {
   console.log(`${name} is sleeping`);
 }
