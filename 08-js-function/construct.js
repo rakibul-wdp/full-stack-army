@@ -1,14 +1,26 @@
 // let's construct a function
-new Function();
-
-function strToObj(str) {
-  let obj = {};
-  for (let s of str) {
-    if (s !== " ") {
-      obj[s] = s;
-    }
+const fn = new Function("str", `let obj = {};
+for (let s of str) {
+  if (s !== " ") {
+    obj[s] = s;
   }
-  return obj;
+}
+return obj;`);
+
+console.log(fn("Abul Babul"));
+
+const fData = {
+  params: ["a", "b"],
+  body: [
+    "const r = a + b",
+    "return r"
+  ]
 }
 
-console.log(strToObj("Abul Babul"));
+const fBody = fData.body.reduce((acc, cur) => {
+  acc += cur + ";"
+  return acc;
+}, "");
+
+const tf = new Function(...fData.params, fBody);
+console.log(tf(100, 200));
