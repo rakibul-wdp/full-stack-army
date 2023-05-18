@@ -29,6 +29,24 @@ const operations = [
     args: [10, 20],
     params: ["a", "b"],
     body: "console.log('a * b =', a * b)"
+  },
+  {
+    args: [10, 20],
+    params: ["a", "b"],
+    body: `console.log("Hello World"); console.log("No Parameter, No ARGS");`
+  },
+  {
+    args: [5],
+    params: ["n"],
+    body: `
+    for (let i = 0; i < n; i++) {
+      let line = "";
+      for (let j = 0; j < n; j++) {
+        line += "* ";
+      }
+      console.log(line);
+    }
+    `
   }
 ]
 
