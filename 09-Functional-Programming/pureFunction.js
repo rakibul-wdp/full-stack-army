@@ -25,3 +25,8 @@ const arr2 = [1, 2, 3];
 function add(data) {
   arr.push(data);
 }
+
+// impure function
+function log(msg) {
+  console.log(msg);
+}
