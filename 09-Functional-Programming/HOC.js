@@ -8,7 +8,7 @@
  * hidden concepts
  * - scope
  * - closure
- * - function context
+ * - execution context
  * - hoisting
  */
 
@@ -72,13 +72,13 @@ const sqr = power(2);
 const cube = power(3);
 const power8 = power(8);
 
-console.log("SQR", sqr);
-console.log("Cube", cube);
-console.log("Power 8", power8);
+// console.log("SQR", sqr);
+// console.log("Cube", cube);
+// console.log("Power 8", power8);
 
-console.log(power8(3));
-console.log(sqr(4));
-console.log(sqr(5));
+// console.log(power8(3));
+// console.log(sqr(4));
+// console.log(sqr(5));
 
 // lexing / parsing / tokenize -> compile -> run
 
@@ -89,12 +89,33 @@ console.log(sqr(5));
 const a = 10;
 function mostOuter() {
   function outer() {
-    console.log(a);
+    // console.log(a);
   }
 }
 
 {
-  const notScoped = "not scoped"
+  {
+    {
+
+    }
+  }
 }
 
-console.log(notScoped);
+// console.log(notScoped);
+
+function A() {
+  console.log("I am A")
+}
+function B() {
+  A()
+}
+function C() {
+  B()
+  B()
+}
+function D() {
+  C()
+  A()
+}
+
+D();
