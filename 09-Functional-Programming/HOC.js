@@ -104,7 +104,7 @@ function mostOuter() {
 // console.log(notScoped);
 
 function A() {
-  console.log("I am A")
+  // console.log("I am A")
 }
 function B() {
   A()
@@ -119,3 +119,17 @@ function D() {
 }
 
 D();
+
+
+function randomSum(max) {
+  const random1 = Math.floor(Math.random() * max);
+  const random2 = Math.floor(Math.random() * max);
+
+  return random1 + random2; // placeholder
+}
+
+randomSum(15);
+
+
+// study callback & higher order
+// lodash create a utility library like lodash

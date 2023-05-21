@@ -4,3 +4,6 @@
 - Function Scope + Closure + Hoisting
 - Callback Function
 - IIFE
+
+### Create Lodash utility library
+### Callback and HOC study
