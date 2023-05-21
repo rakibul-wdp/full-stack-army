@@ -32,6 +32,28 @@
  * /users?username=[username]
  */
 
+const get = (path) => Promise.resolve()
+
+get(`/users?username=abul`)
+  .then((user) => {
+    /** do all other operations here */
+    get(`/posts?userId=${user.id}`);
+  })
+  .then(posts => {
+    const latestPost = posts[0]
+    return get(`/comments?postId=${latestPost.id}`);
+  })
+  .then((comments) => {
+    const latestComment = comments[0]
+    return get(`/users/username=${latestComment.username}`);
+  })
+  .then((user) => {
+    console.log(user);
+  })
+  .catch(() => {
+    console.log("Error")
+  })
+
 const isResolved = true;
 
 const promise = new Promise((resolve, reject) => {
@@ -82,14 +104,20 @@ function wait(ms) {
   return promise;
 }
 
+const wait2 = (ms) => new Promise((resolve) => setTimeout(resolve, ms));
+
 wait(10).then(() => {
-  console.log("Done in 10ms")
+  // console.log("Done in 10ms")
 });
 
 wait(100).then(() => {
-  console.log("Done in 100ms")
+  // console.log("Done in 100ms")
 });
 
 wait(1000).then(() => {
-  console.log("Done in 1000ms")
+  // console.log("Done in 1000ms")
+});
+
+wait2(2000).then(() => {
+  // console.log("Done in 1000ms from wait2")
 });
