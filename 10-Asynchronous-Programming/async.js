@@ -32,3 +32,19 @@
  * /users?username=[username]
  */
 
+function get(path, cb) {
+  const data = {} // somehow process it
+  cb(data)
+}
+
+function getUserNameFromComment(username) {
+  get(`/users?username=${username}`, (user) => {
+    get(`/posts/userId=${userId}`, () => {
+      get(`/comments?postId=${posts[0].id}`, (comments) => {
+        get(`/users?username=${comments[0].username}`, (user) => {
+          console.log(user)
+        })
+      })
+    })
+  })
+}
