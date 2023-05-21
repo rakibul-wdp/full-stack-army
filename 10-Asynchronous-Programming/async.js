@@ -32,6 +32,21 @@
  * /users?username=[username]
  */
 
+// get user data by async await
+async function getUserName(username) {
+  try {
+    const mainUser = await get(`/users?username=${username}`);
+    const posts = await get(`/posts/userId=${mainUser.id}`);
+    const comments = await get(`/comments?postId=${posts[0].id}`);
+    const user = await get(`/users?username=${comments[0].username}`);
+    console.log(user);
+  } catch (e) {
+    console.log(e)
+  }
+}
+
+// get user data by Promise
+
 const get = (path) => Promise.resolve()
 
 get(`/users?username=abul`)
