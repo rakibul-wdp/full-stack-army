@@ -32,6 +32,27 @@
  * /users?username=[username]
  */
 
+const isResolved = true;
+
+const promise = new Promise((resolve, reject) => {
+  if (isResolved) {
+    resolve("completed");
+  } else {
+    reject("data")
+  }
+})
+
+console.log(promise);
+
+promise.then((result) => {
+  console.log(result);
+}).catch(() => {
+  console.log("Rejected");
+})
+
+
+/*
+
 function get(path, cb) {
   const data = {} // somehow process it
   cb(data)
@@ -48,3 +69,7 @@ function getUserNameFromComment(username) {
     })
   })
 }
+
+getUserNameFromComment("Abul");
+
+*/
