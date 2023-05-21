@@ -42,12 +42,12 @@ const promise = new Promise((resolve, reject) => {
   }
 })
 
-console.log(promise);
+// console.log(promise);
 
 promise.then((result) => {
-  console.log(result);
+  // console.log(result);
 }).catch(() => {
-  console.log("Rejected");
+  // console.log("Rejected");
 })
 
 
@@ -73,3 +73,23 @@ function getUserNameFromComment(username) {
 getUserNameFromComment("Abul");
 
 */
+
+function wait(ms) {
+  const promise = new Promise((resolve) => {
+    setTimeout(resolve, ms);
+  })
+
+  return promise;
+}
+
+wait(10).then(() => {
+  console.log("Done in 10ms")
+});
+
+wait(100).then(() => {
+  console.log("Done in 100ms")
+});
+
+wait(1000).then(() => {
+  console.log("Done in 1000ms")
+});
