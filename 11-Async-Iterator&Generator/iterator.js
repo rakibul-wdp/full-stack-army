@@ -1,16 +1,21 @@
-// 1, 2, 3, 4
+const channel = "Abul";
+const channelIterator = channel[Symbol.iterator]();
+// console.log(channelIterator.next());
+// console.log(channelIterator.next());
+// console.log(channelIterator.next());
+// console.log(channelIterator.next());
+// console.log(channelIterator.next());
+// console.log(channelIterator.next());
+// console.log(channelIterator.next());
 
-const arr = [1, 2, 3, 4];
-
-let index = 0;
-function next() {
-  return arr[index++];
+for (let v of channel) {
+  // console.log(v);
 }
 
-console.log(next());
-
-for (let i = 0; i < 10; i++) {
-  console.log("Hello World");
+while (true) {
+  const data = channelIterator.next();
+  if (data.done) {
+    break;
+  }
+  console.log(data.value);
 }
-
-console.log(next());
