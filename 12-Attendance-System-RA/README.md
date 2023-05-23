@@ -15,8 +15,15 @@
 - Each day, student will have a time-sheet of attendance.
 - Student can see their own time logs and attend button when enabled.
 
-### Functional Requirements:
+## Functional Requirements:
 ### Admin
+- We will generate a super admin during application installation
+- Admin can create student
+- Admin can delete, update or check students information
+- Admin can change status of a student
+- Admin can check time sheet of a student
+- Admin can enable or disable attendance button
+- Admin can check stats of a given day
 ### Student
 - Student can register themselves
 - There will be following account status for a students - 
