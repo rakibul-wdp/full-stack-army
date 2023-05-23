@@ -17,7 +17,6 @@
 
 ## Functional Requirements:
 ### Admin
-- We will generate a super admin during application installation
 - Admin can create student
 - Admin can delete, update or check students information
 - Admin can change status of a student
@@ -39,9 +38,62 @@
   - Phone Number
   - Profile Picture
 - Active users can change / update password
-- Active users can see their logs
+- Active users can see their time-sheet
   - Calendar view
   - List View
   - Table View
 - Active users can participate in attendance system
 - User can logout
+
+### Requirement Analysis
+#### Models:
+
+#### User
+- Name
+- Email
+- Password
+- Roles
+- AccountStatus
+
+#### Profile
+- First Name
+- Last Name
+- Phone Number
+- Profile Picture
+- UserId
+
+#### Student Attendance
+- UserId
+- CreatedAt: Date Time
+
+#### Admin Attendance
+- CreatedAt: DateTime
+- Status
+- TimeLimit
+
+### Endpoints
+
+#### Student Endpoints
+- POST /auth/login (public)
+- POST /auth/register (public)
+- PATCH /profile (private)
+- PATCH /profiles/avatar (private)
+- PUT /auth/change-password (private)
+- GET /timesheet (private)
+- GET /attendance (private)
+
+#### Admin Endpoints
+- GET /users (private)
+- POST /users (private)
+- PATCH /users/userId (private)
+- DELETE /users/userId (private)
+- GET /users/userId (private)
+- GET /profiles (private)
+- POST /profiles (private)
+- PATCH /profiles/profileId (private)
+- DELETE /profiles/profileId (private)
+- GET /profiles/profileId (private)
+- GET /timesheet/userId (private)
+- GET /timesheet/stats
+- POST /attendance/enable (private)
+- GET /attendance/disabled/:attendanceId (private)
