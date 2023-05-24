@@ -109,3 +109,33 @@
 - Profile CRUD
 - Admin Control Over Attendance
 - Generate Stats
+
+#### Registration Process:
+- Start
+- name = Input()
+- email = Input()
+- password = Input()
+- if name && email && password is Invalid:
+  - return 400 error
+- user = find user with email
+- if user found:
+  - return 400 error
+- hash = hash password
+- user = save name, email, hash to user model
+- return 201
+
+#### Login Process:
+- Start
+- email = Input()
+- password = Input()
+
+- user = find user with email
+- if user not found:
+  - return 400 error
+
+- if password not equal to user.hash:
+  - return 400 error
+
+- token = generate token using user
+- return token
+- end
