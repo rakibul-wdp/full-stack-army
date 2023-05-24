@@ -81,6 +81,7 @@
 - PUT /auth/change-password (private)
 - GET /timesheet (private)
 - GET /attendance (private)
+- GET /attendanceStats (private)
 
 #### Admin Endpoints
 - GET /users (private)
@@ -97,3 +98,14 @@
 - GET /timesheet/stats
 - POST /attendance/enable (private)
 - GET /attendance/disabled/:attendanceId (private)
+
+### API Tasks
+#### TODO
+- Create Models
+- Authentication
+- Middleware
+- TimeSheet and Attendance
+- USER CRUD
+- Profile CRUD
+- Admin Control Over Attendance
+- Generate Stats
