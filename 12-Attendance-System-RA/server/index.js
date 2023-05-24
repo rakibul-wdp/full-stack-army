@@ -2,7 +2,11 @@ const express = require("express");
 const app = express();
 
 app.get("/", (_, res) => {
-  res.send("<h1 style='color: red'>Hello, It's a heading</h1>");
+  const obj = {
+    name: "Abul",
+    email: "abul@gmail.com",
+  };
+  res.json(obj);
 });
 
 app.listen(5000, () => {
