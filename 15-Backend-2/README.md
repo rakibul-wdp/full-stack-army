@@ -43,3 +43,8 @@
 - Linux Server
 - Cloud Computing
 - DevOps
+
+### Server Application Responsibility
+- Listen Request
+- Process
+- Response
