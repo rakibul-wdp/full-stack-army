@@ -1,6 +1,8 @@
 const express = require("express");
 const app = express();
 
+app.use(express.json());
+
 const books = [
   {
     id: "1",
@@ -35,6 +37,13 @@ app.get("/books", (req, res) => {
   }
 
   return res.json(books);
+})
+
+app.post("/books", (req, res) => {
+  const book = req.body;
+  books.push(book);
+
+  res.json(books);
 })
 
 app.listen(5000, () => {

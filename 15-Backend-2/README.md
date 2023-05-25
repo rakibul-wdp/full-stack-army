@@ -61,3 +61,12 @@
 - POST - create new data
 - PUT/PATCH - update existing content
 - DELETE - delete data from database
+
+### Routing Patterns
+- GET Everything - /books
+- GET One Book - /books/bookId
+- POST New Book - /books
+- Update Book - /books/bookId
+- Delete Book - /books/bookId
+
+### REQUEST -> MIDDLEWARE[logger, body parser, file parser, user ip, block ip, authentication, authorization, validation] -> CONTROLLER (business logic) -> MIDDLEWARE[error handler] RESPONSE
