@@ -46,5 +46,18 @@
 
 ### Server Application Responsibility
 - Listen Request
+  - Always Same
 - Process
+  - Algorithm
+  - Data Structure
+  - Database
+  - Problem Solving
+  - CRUD
 - Response
+  - Always Same
+
+### HTTP:
+- GET - want to read data from server
+- POST - create new data
+- PUT/PATCH - update existing content
+- DELETE - delete data from database
