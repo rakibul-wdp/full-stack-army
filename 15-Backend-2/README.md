@@ -70,3 +70,27 @@
 - Delete Book - /books/bookId
 
 ### REQUEST -> MIDDLEWARE[logger, body parser, file parser, user ip, block ip, authentication, authorization, validation] -> CONTROLLER (business logic) -> MIDDLEWARE[error handler] RESPONSE
+
+
+### Backend 3
+#### Agenda
+- Middleware
+- Project Structure
+- Project
+
+- What is Middleware
+- Middleware is just a controller function
+- Req -> M1 -> M2 -> M3 -> Res
+
+```
+// we will never call it, express will automatically invoke it for us
+// this is middleware
+function xyz(req, res, next) {
+  next();
+}
+
+// this is controller
+function xyz(req, res, next) {
+  res.send();
+}
+```
