@@ -4,10 +4,7 @@ const express = require("express");
 const app = express();
 
 app.use(require("./middleware"));
-
-app.get("/health", (_req, res) => {
-  res.status(200).json({ message: "Success" });
-});
+app.use(require("./routes"));
 
 app.use((_req, _res, next) => {
   const error = new Error("Resource Not Found");
