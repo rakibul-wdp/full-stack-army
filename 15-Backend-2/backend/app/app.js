@@ -1,25 +1,11 @@
 require("dotenv").config("../.env");
 const express = require("express");
-const morgan = require("morgan");
-const cors = require("cors");
 
 const app = express();
 
-app.use(
-  [
-    morgan("dev"),
-    cors(),
-    express.json(),
-  ]
-);
+app.use(require("./middleware"));
 
 app.get("/health", (_req, res) => {
-  throw new Error("Error");
-  res.status(200).json({ message: "Success" });
-});
-
-app.get("/health2", (_req, res) => {
-  throw new Error("Error");
   res.status(200).json({ message: "Success" });
 });
 
