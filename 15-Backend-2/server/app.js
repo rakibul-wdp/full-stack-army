@@ -13,7 +13,12 @@ const simpleLogger = (req, res, next) => {
   next();
 }
 
-app.use(simpleLogger);
+const secondMiddleware = (req, res, next) => {
+  console.log("I am second middleware");
+  next();
+}
+
+app.use([simpleLogger, secondMiddleware]);
 
 app.get("/hello", (req, res) => {
   res.json({ message: "Hello" });
