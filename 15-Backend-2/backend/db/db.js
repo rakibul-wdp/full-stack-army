@@ -89,8 +89,17 @@ class MyDB {
   }
 
   // delete ticket from db
-  deleteById() {
+  deleteById(ticketId) {
+    const index = this.tickets.findIndex(
+      (ticket) => ticket.id === ticketId
+    );
 
+    if (index !== -1) {
+      this.tickets.splice(index, 1);
+      return true;
+    } else {
+      return false;
+    }
   }
 
   draw() {
