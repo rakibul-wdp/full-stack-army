@@ -41,9 +41,36 @@ class MyDB {
     return this.tickets;
   }
 
-  // single ticket
-  findById() {
+  /**
+   * find ticket by ticket id
+   * @param {string} ticketId 
+   * @returns {Ticket}
+   */
+  findById(ticketId) {
+    const ticket = this.tickets.find(
+      /**
+       * 
+       * @param {Ticket} ticket 
+       */
+      (ticket) => ticket.id === ticketId
+    )
 
+    return ticket;
+  }
+
+  /**
+   * find all tickets for a given user
+   * @param {string} username 
+   * @returns {Array<Ticket>}
+   */
+  findByUsername(username) {
+    const tickets = this.tickets.filter(
+      /**
+       * @param {Ticket} ticket
+       */
+      (ticket) => ticket.username === username
+    );
+    return tickets;
   }
 
   // update ticket info
