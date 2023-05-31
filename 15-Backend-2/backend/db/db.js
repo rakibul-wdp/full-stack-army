@@ -102,8 +102,25 @@ class MyDB {
     }
   }
 
-  draw() {
+  /**
+   * find winners
+   * @param {number} winnerCount 
+   * @returns {Array<Ticket>}
+   */
+  draw(winnerCount) {
+    let indexes = new Array(winnerCount);
+    for (let i = 0; i < indexes.length; i++) {
+      let index = Math.floor(Math.random() * this.tickets.length);
+      if (indexes.includes(index)) {
+        while (indexes.includes(index)) {
+          index = Math.floor(Math.random() * this.tickets.length);
+        }
+        indexes.push(index);
+      }
 
+      const winners = indexes.map((index) => this.tickets[index]);
+      return winners;
+    }
   }
 }
 
