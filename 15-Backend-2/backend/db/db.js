@@ -5,9 +5,16 @@ class MyDB {
     this.ticket = [];
   }
 
-  // create new ticket
-  create() {
-
+  /**
+   * create and save a new ticket
+   * @param {string} username 
+   * @param {number} price 
+   * @returns {Ticket} return a ticket object
+   */
+  create(username, price) {
+    const ticket = new Ticket(username, price);
+    this.ticket.push(ticket);
+    return ticket;
   }
 
   // sell multiple ticket
