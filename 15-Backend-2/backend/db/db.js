@@ -73,9 +73,19 @@ class MyDB {
     return tickets;
   }
 
-  // update ticket info
-  updateById() {
+  /**
+   * 
+   * @param {string} ticketId 
+   * @param {{username: string, price: number}} ticketBody 
+   * @returns {Ticket}
+   */
+  updateById(ticketId, ticketBody) {
+    const ticket = this.findById(ticketId);
+    ticket.username = ticketBody.username ?? ticket.username;
+    ticket.price = ticketBody.price ?? ticket.price;
+    ticket.updatedAt = new Date();
 
+    return ticket;
   }
 
   // delete ticket from db
