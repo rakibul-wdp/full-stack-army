@@ -17,14 +17,28 @@ class MyDB {
     return ticket;
   }
 
-  // sell multiple ticket
-  bulkCreate() {
+  /**
+   * create multiple ticket for a single user
+   * @param {string} username 
+   * @param {number} price 
+   * @param {number} quantity 
+   * @returns {Array<Ticket>}
+   */
+  bulkCreate(username, price, quantity) {
+    const result = [];
+    for (let i = 0; i < quantity; i++) {
+      const ticket = this.create(username, price);
+      result.push(ticket);
+    }
 
+    return result;
   }
 
-  // return all tickets
+  /**
+   * return all available tickets
+   */
   find() {
-
+    return this.tickets;
   }
 
   // single ticket
