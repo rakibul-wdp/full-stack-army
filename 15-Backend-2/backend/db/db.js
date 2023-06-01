@@ -2,7 +2,7 @@ const Ticket = require("../models/Ticket");
 
 class MyDB {
   constructor() {
-    this.ticket = [];
+    this.tickets = [];
   }
 
   /**
@@ -13,7 +13,7 @@ class MyDB {
    */
   create(username, price) {
     const ticket = new Ticket(username, price);
-    this.ticket.push(ticket);
+    this.tickets.push(ticket);
     return ticket;
   }
 
@@ -111,16 +111,16 @@ class MyDB {
     let indexes = new Array(winnerCount);
     for (let i = 0; i < indexes.length; i++) {
       let index = Math.floor(Math.random() * this.tickets.length);
-      if (indexes.includes(index)) {
-        while (indexes.includes(index)) {
-          index = Math.floor(Math.random() * this.tickets.length);
-        }
-        indexes.push(index);
+      while (indexes.includes(index)) {
+        index = Math.floor(Math.random() * this.tickets.length);
       }
-
-      const winners = indexes.map((index) => this.tickets[index]);
-      return winners;
+      indexes.push(index);
     }
+
+    console.log("indexes", indexes);
+
+    const winners = indexes.map((index) => this.tickets[index]);
+    return winners;
   }
 }
 
