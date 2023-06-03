@@ -22,7 +22,11 @@ router.post("/bulk", (req, res) => {
     tickets,
   });
 });
-router.get("/draw", () => { });
+router.get("/draw", (req, res) => {
+  const winnerCount = req.query.wc ?? 3;
+  const winners = db.draw(winnerCount);
+  res.status(200).json(winners);
+});
 router.get("", () => { });
 
 // router.route("/tickets/t/:ticketId").get(() => { }).patch(() => { }).delete(() => { });
