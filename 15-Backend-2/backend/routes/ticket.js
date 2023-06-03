@@ -27,7 +27,10 @@ router.get("/draw", (req, res) => {
   const winners = db.draw(winnerCount);
   res.status(200).json(winners);
 });
-router.get("", () => { });
+router.get("", (req, res) => {
+  const tickets = db.find();
+  res.status(200).json(tickets);
+});
 
 // router.route("/tickets/t/:ticketId").get(() => { }).patch(() => { }).delete(() => { });
 
