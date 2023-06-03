@@ -14,7 +14,14 @@ router.post("/sell", (req, res) => {
   const ticket = db.create(username, price);
   res.status(201).json({ message: "Ticket Created Successfully", ticket });
 });
-router.post("/bulk", () => { });
+router.post("/bulk", (req, res) => {
+  const { username, price, quantity } = req.body;
+  const tickets = db.bulkCreate(username, price, quantity);
+  res.status(201).json({
+    message: "Bulk Ticket Created Successfully",
+    tickets,
+  });
+});
 router.get("/draw", () => { });
 router.get("", () => { });
 
