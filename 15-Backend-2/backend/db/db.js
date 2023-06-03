@@ -120,16 +120,6 @@ class MyDB {
       }
     }
 
-    // for (let i = 0; i < indexes.length; i++) {
-    //   let index = Math.floor(Math.random() * this.tickets.length);
-    //   while (indexes.includes(index)) {
-    //     index = Math.floor(Math.random() * this.tickets.length);
-    //   }
-    //   indexes[i] = index;
-    // }
-
-    // console.log("indexes", indexes);
-
     const winners = winnerIndexes.map((index) => this.tickets[index]);
     return winners;
   }
