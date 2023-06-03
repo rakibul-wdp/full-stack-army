@@ -9,7 +9,11 @@ router.get("/u/:username", () => { });
 router.patch("/u/:username", () => { });
 router.delete("/u/:username", () => { });
 
-router.post("/sell", () => { });
+router.post("/sell", (req, res) => {
+  const { username, price } = req.body;
+  const ticket = db.create(username, price);
+  res.status(201).json({ message: "Ticket Created Successfully", ticket });
+});
 router.post("/bulk", () => { });
 router.get("/draw", () => { });
 router.get("", () => { });
