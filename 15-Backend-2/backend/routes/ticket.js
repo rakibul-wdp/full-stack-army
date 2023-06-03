@@ -1,8 +1,16 @@
 const router = require("express").Router();
 const db = require("../db/db");
 
-router.get("/t/:ticketId", () => { });
-router.patch("/t/:ticketId", () => { });
+router.get("/t/:ticketId", (req, res) => {
+  const ticketId = req.params.ticketId;
+  const ticket = db.findById(ticketId);
+  res.status(200).json(ticket);
+});
+router.patch("/t/:ticketId", (req, res) => {
+  const ticketId = req.params.ticketId;
+  const updatedTicket = db.updateById(ticketId, req.body);
+  res.status(200).json({ message: "Updated Successfully", updatedTicket });
+});
 router.delete("/t/:ticketId", () => { });
 
 router.get("/u/:username", () => { });
