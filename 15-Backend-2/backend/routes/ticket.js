@@ -11,7 +11,11 @@ router.patch("/t/:ticketId", (req, res) => {
   const updatedTicket = db.updateById(ticketId, req.body);
   res.status(200).json({ message: "Updated Successfully", updatedTicket });
 });
-router.delete("/t/:ticketId", () => { });
+router.delete("/t/:ticketId", (req, res) => {
+  const ticketId = req.params.ticketId;
+  db.deleteById(ticketId);
+  res.status(203).send();
+});
 
 router.get("/u/:username", () => { });
 router.patch("/u/:username", () => { });
