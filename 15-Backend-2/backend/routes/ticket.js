@@ -17,7 +17,11 @@ router.delete("/t/:ticketId", (req, res) => {
   res.status(203).send();
 });
 
-router.get("/u/:username", () => { });
+router.get("/u/:username", (req, res) => {
+  const username = req.params.username;
+  const tickets = db.findByUsername(username);
+  res.status(200).json(tickets);
+});
 router.patch("/u/:username", () => { });
 router.delete("/u/:username", () => { });
 
