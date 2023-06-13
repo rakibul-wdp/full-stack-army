@@ -23,7 +23,12 @@ app.post("/register", async (req, res) => {
   if (user) {
     return res.status(400).json({ message: "User already exist" });
   }
-})
+
+  user = new User({ name, email, password });
+  await user.save();
+
+  return res.status(201).json({ message: "User created successfully", user });
+});
 
 app.get("/", (_, res) => {
   const obj = {
