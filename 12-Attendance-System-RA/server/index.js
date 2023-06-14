@@ -6,7 +6,7 @@ const User = require("./models/User");
 const app = express();
 app.use(express.json());
 
-app.post("/register", async (req, res) => {
+app.post("/register", async (req, res, next) => {
   /**
    * Request Input Sources:
    * req Body
@@ -20,19 +20,23 @@ app.post("/register", async (req, res) => {
     return res.status(400).json({ message: "Invalid Data" });
   }
 
-  let user = await User.findOne({ email });
-  if (user) {
-    return res.status(400).json({ message: "User already exist" });
+  try {
+    let user = await User.findOne({ email });
+    if (user) {
+      return res.status(400).json({ message: "User already exist" });
+    }
+
+    user = new User({ name, email, password });
+
+    const salt = await bcrypt.genSalt(10);
+    const hash = await bcrypt.hash(password, salt);
+    user.password = hash;
+
+    await user.save();
+    return res.status(201).json({ message: "User created successfully", user });
+  } catch (e) {
+    next(e);
   }
-
-  user = new User({ name, email, password });
-
-  const salt = await bcrypt.genSalt(10);
-  const hash = await bcrypt.hash(password, salt);
-  user.password = hash;
-
-  await user.save();
-  return res.status(201).json({ message: "User created successfully", user });
 });
 
 app.get("/", (_, res) => {
@@ -41,6 +45,11 @@ app.get("/", (_, res) => {
     email: "abul@gmail.com",
   };
   res.json(obj);
+});
+
+app.use((err, req, res, next) => {
+  console.log(err);
+  res.status(500).json({ message: "Server Error Occurred" })
 });
 
 connectDB("mongodb+srv://doctor_practice:28LWDslaloONGvzu@cluster0.aee2j.mongodb.net/?retryWrites=true&w=majority").then(() => {
