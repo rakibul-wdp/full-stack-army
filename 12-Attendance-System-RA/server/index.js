@@ -26,7 +26,7 @@ app.get("/", (_, res) => {
 
 app.use((err, req, res, next) => {
   console.log(err);
-  res.status(500).json({ message: "Server Error Occurred" })
+  res.status(err.status ? err.status : 500).json({ message: "Server Error Occurred" })
 });
 
 connectDB("mongodb+srv://doctor_practice:28LWDslaloONGvzu@cluster0.aee2j.mongodb.net/?retryWrites=true&w=majority").then(() => {
