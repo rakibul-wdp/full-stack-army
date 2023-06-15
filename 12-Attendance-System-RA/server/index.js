@@ -1,14 +1,11 @@
 const express = require("express");
-const bcrypt = require('bcryptjs');
-const jwt = require("jsonwebtoken");
 const connectDB = require("./db");
-const User = require("./models/User");
 const authenticate = require("./middleware/authenticate");
-
-const { registerController, loginController } = require("./controller/auth");
+const routes = require("./routes");
 
 const app = express();
 app.use(express.json());
+app.use(routes);
 
 app.get("/private", authenticate, async (req, res) => {
   console.log("I am the user", req.user);
