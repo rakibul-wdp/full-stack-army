@@ -16,20 +16,30 @@ const registerService = async ({ name, email, password }) => {
   return createNewUser({ name, email, password: hash })
 }
 
-const loginService = async () => {
-  // const user = await User.findOne({ email });
+const loginService = async ({ email, password }) => {
+  const user = await findUserByProperty("email", email)
 
-  // if (!user) {
-  //   return res.status(400).json({ message: "Invalid Credential" });
-  // }
+  if (!user) {
+    const error = new Error("Invalid Credential");
+    error.status = 400;
+    throw error;
+  }
 
-  // const isMatch = await bcrypt.compare(password, user.password);
-  // if (!isMatch) {
-  //   return res.status(400).json({ message: "Invalid Credential" });
-  // }
+  const isMatch = await bcrypt.compare(password, user.password);
+  if (!isMatch) {
+    const error = new Error("Invalid Credential");
+    error.status = 400;
+    throw error;
+  }
 
-  // delete user._doc.password;
-  // const token = jwt.sign(user._doc, 'secret-key', { expiresIn: "20s" });
+  const payload = {
+    _id: user._id,
+    name: user.name,
+    email: user.email,
+    roles: user.roles,
+    accountStatus: user.accountStatus,
+  }
+  return jwt.sign(payload, 'secret-key', { expiresIn: "2h" });
 }
 
 module.exports = {
