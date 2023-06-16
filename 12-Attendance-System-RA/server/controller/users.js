@@ -1,5 +1,6 @@
 const User = require("../models/User");
 const userService = require("../service/user");
+const error = require("../utils/error");
 
 const getUsers = async (req, res, next) => {
   /**
@@ -13,8 +14,20 @@ const getUsers = async (req, res, next) => {
   }
 }
 
-const getUserById = (req, res, next) => {
+const getUserById = async (req, res, next) => {
+  const userId = req.params.userId;
 
+  try {
+    const user = await userService.findUserByProperty("_id", userId);
+
+    if (!user) {
+      throw error("User not found", 404);
+    }
+
+    return res.status(200).json(user)
+  } catch (e) {
+    next(e);
+  }
 }
 
 const postUser = (req, res, next) => {
