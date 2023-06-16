@@ -1,4 +1,5 @@
 const router = require("express").Router();
+const userController = require("../controller/users");
 
 /**
  * GET user by id or email
@@ -32,7 +33,7 @@ router.delete("/:userId", () => { });
  * @method GET
  * @visibility Private
  */
-router.get("/", () => { });
+router.get("/", userController.getUsers);
 
 /**
  * create a new user
