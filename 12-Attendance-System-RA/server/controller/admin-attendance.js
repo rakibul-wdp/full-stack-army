@@ -2,13 +2,13 @@ const { addMinutes, isAfter } = require("date-fns");
 const AdminAttendance = require("../models/AdminAttendance");
 const error = require("../utils/error");
 
-const getEnable = async (req, res, next) => {
+const getEnable = async (_req, res, next) => {
   try {
     const running = await AdminAttendance.findOne({ status: "RUNNING" });
     if (running) {
       throw error("Already Running", 400);
     }
-    const attendance = new AdminAttendance({ timeLimit: 1 });
+    const attendance = new AdminAttendance({});
     await attendance.save();
     return res.status(201).json({ message: "Success", attendance });
   } catch (e) {
@@ -16,7 +16,7 @@ const getEnable = async (req, res, next) => {
   }
 };
 
-const getStatus = async (req, res, next) => {
+const getStatus = async (_req, res, next) => {
   try {
     const running = await AdminAttendance.findOne({ status: "RUNNING" });
     if (!running) {
@@ -35,7 +35,21 @@ const getStatus = async (req, res, next) => {
   }
 }
 
-const getDisable = (req, res, next) => { };
+const getDisable = async (_req, res, next) => {
+  try {
+    const running = await AdminAttendance.findOne({ status: "RUNNING" });
+    if (!running) {
+      throw error("Not Running", 400);
+    }
+
+    running.status = "COMPLETED";
+    await running.save();
+
+    return res.status(200).json(running);
+  } catch (e) {
+    next(e);
+  }
+};
 
 module.exports = {
   getEnable,
