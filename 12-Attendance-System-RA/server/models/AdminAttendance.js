@@ -5,7 +5,7 @@ const adminAttendanceSchema = new Schema({
     type: Number,
     required: true,
     max: 30,
-    min: 5,
+    min: 1,
     default: 5
   },
   status: {
