@@ -1,3 +1,4 @@
+const { addMinutes, isAfter } = require("date-fns");
 const AdminAttendance = require("../models/AdminAttendance");
 const StudentAttendance = require("../models/StudentAttendance");
 const error = require("../utils/error");
@@ -41,6 +42,28 @@ const getAttendance = async (req, res, next) => {
   }
 }
 
+const getAttendanceStatus = async (_req, res, next) => {
+  try {
+    const running = await AdminAttendance.findOne({ status: "RUNNING" });
+
+    if (!running) {
+      throw error("Already Running", 400);
+    }
+
+    const started = addMinutes(new Date(running.createdAt), running.timeLimit);
+
+    if (isAfter(new Date(), started)) {
+      running.status = "COMPLETED";
+      await running.save();
+    }
+
+    return res.status(200).json(running);
+  } catch (e) {
+    next(e);
+  }
+}
+
 module.exports = {
   getAttendance,
+  getAttendanceStatus
 }
