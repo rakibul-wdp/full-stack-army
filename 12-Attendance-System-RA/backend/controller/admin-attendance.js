@@ -18,6 +18,28 @@ const getEnable = async (_req, res, next) => {
   }
 }
 
+const getStatus = async (_req, res, next) => {
+  try {
+    const running = await AdminAttendance.findOne({ status: "RUNNING" });
+
+    if (!running) {
+      throw error("Already Running", 400);
+    }
+
+    const started = addMinutes(new Date(running.createdAt), running.timeLimit);
+
+    if (isAfter(new Date(), started)) {
+      running.status = "COMPLETED";
+      await running.save();
+    }
+
+    return res.status(200).json(running);
+  } catch (e) {
+    next(e);
+  }
+}
+
 module.exports = {
-  getEnable
+  getEnable,
+  getStatus,
 }
