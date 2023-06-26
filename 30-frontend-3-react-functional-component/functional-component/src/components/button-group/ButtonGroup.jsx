@@ -1,6 +1,6 @@
 import React from 'react';
 
-const variant = {
+const variants = {
   primary: {
     backgroundColor: "#2196f3",
     color: "#fff"
@@ -23,9 +23,12 @@ const variant = {
   }
 }
 
-const ButtonGroup = ({ text, type }) => {
+const ButtonGroup = ({ text, type, variant }) => {
+  const result = variants["primary"];
+  console.log(variants);
+
   return (
-    <button style={{ width: "65%", border: "none", padding: "5px 0px", margin: "0 0 5px 0", fontSize: "0.9rem", fontWeight: "bold", textTransform: "uppercase", letterSpacing: "1px", cursor: "pointer", borderRadius: "0.15rem", ...variant }} type={type}>{text}</button>
+    <button style={{ width: "65%", border: "none", padding: "5px 0px", margin: "0 0 5px 0", fontSize: "0.9rem", fontWeight: "bold", textTransform: "uppercase", letterSpacing: "1px", cursor: "pointer", borderRadius: "0.15rem", ...variants[variant] }} type={type}>{text}</button>
   )
 }
 
