@@ -1,4 +1,5 @@
 import './App.css'
+import ButtonGroup from './components/button-group/ButtonGroup';
 import InputGroup from './components/input-group/InputGroup';
 
 function App() {
@@ -12,8 +13,8 @@ function App() {
           <InputGroup label="What is your Email?" type="email" name="email" id="email" />
           <InputGroup label="What is your Password?" type="password" name="password" id="password" />
           <div style={{ marginTop: "1rem" }}>
-            <button style={{ width: "65%", background: "tomato", border: "none", padding: "5px 0px", color: "white" }} type='reset'>Reset</button>
-            <button style={{ width: "65%", background: "tomato", border: "none", padding: "5px 0px", color: "white" }} type="submit">Submit</button>
+            <ButtonGroup label="Reset" type="reset" />
+            <ButtonGroup label="Submit" type="submit" />
           </div>
         </form>
       </div>
