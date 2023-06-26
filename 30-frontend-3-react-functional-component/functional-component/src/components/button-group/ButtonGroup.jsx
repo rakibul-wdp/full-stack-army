@@ -1,8 +1,31 @@
-import React from 'react'
+import React from 'react';
 
-const ButtonGroup = ({ label, type }) => {
+const variant = {
+  primary: {
+    backgroundColor: "#2196f3",
+    color: "#fff"
+  },
+  success: {
+    backgroundColor: "#4caf50",
+    color: "#000"
+  },
+  error: {
+    backgroundColor: "#f44336",
+    color: "#fff"
+  },
+  warning: {
+    backgroundColor: "#ff9800",
+    color: "#000"
+  },
+  info: {
+    backgroundColor: "#80d8ff",
+    color: "#000"
+  }
+}
+
+const ButtonGroup = ({ text, type }) => {
   return (
-    <button style={{ width: "65%", background: "tomato", border: "none", padding: "5px 0px", color: "white" }} type={type}>{label}</button>
+    <button style={{ width: "65%", border: "none", padding: "5px 0px", margin: "0 0 5px 0", fontSize: "0.9rem", fontWeight: "bold", textTransform: "uppercase", letterSpacing: "1px", cursor: "pointer", borderRadius: "0.15rem", ...variant }} type={type}>{text}</button>
   )
 }
 

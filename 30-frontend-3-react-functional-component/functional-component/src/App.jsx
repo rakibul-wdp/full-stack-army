@@ -13,8 +13,8 @@ function App() {
           <InputGroup label="What is your Email?" type="email" name="email" id="email" />
           <InputGroup label="What is your Password?" type="password" name="password" id="password" />
           <div style={{ marginTop: "1rem" }}>
-            <ButtonGroup label="Reset" type="reset" />
-            <ButtonGroup label="Submit" type="submit" />
+            <ButtonGroup text="Reset" type="reset" />
+            <ButtonGroup text="Submit" type="submit" />
           </div>
         </form>
       </div>
