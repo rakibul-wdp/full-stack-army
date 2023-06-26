@@ -25,3 +25,11 @@ export default App;
  */
 
 // When you see any duplicate structure just make it a component
+
+
+/**
+ * Designing Component
+ * - Props
+ * - Component Tree
+ * - 
+ */
