@@ -23,12 +23,37 @@ const variants = {
   }
 }
 
-const ButtonGroup = ({ text, type, variant }) => {
-  const result = variants["primary"];
-  console.log(variants);
+const sizes = {
+  small: {
+    padding: "0.5rem 1rem"
+  },
+  medium: {
+    padding: "1rem 2rem"
+  },
+  large: {
+    padding: "1.5rem 3rem"
+  }
+}
 
+const ButtonGroup = ({ text, type, variant, size }) => {
   return (
-    <button style={{ width: "65%", border: "none", padding: "5px 0px", margin: "0 0 5px 0", fontSize: "0.9rem", fontWeight: "bold", textTransform: "uppercase", letterSpacing: "1px", cursor: "pointer", borderRadius: "0.15rem", ...variants[variant] }} type={type}>{text}</button>
+    <button
+      style={{
+        border: "none",
+        margin: "0 0 5px 0",
+        fontSize: "0.9rem",
+        fontWeight: "bold",
+        textTransform: "uppercase",
+        letterSpacing: "1px",
+        cursor: "pointer",
+        borderRadius: "0.15rem",
+        ...variants[variant],
+        ...sizes[size]
+      }}
+      type={type}
+    >
+      {text}
+    </button>
   )
 }
 
