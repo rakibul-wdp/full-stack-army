@@ -2,6 +2,7 @@ import { BrowserRouter, Route, Routes } from 'react-router-dom';
 import './App.css'
 import Form from './pages/Form';
 import Home from './pages/Home';
+import Tasks from './pages/Tasks';
 
 function App() {
   return (
@@ -10,6 +11,7 @@ function App() {
         <Routes>
           <Route path='/' element={<Home />} />
           <Route path='/form' element={<Form />} />
+          <Route path='/tasks' element={<Tasks />} />
         </Routes>
       </BrowserRouter>
     </div>

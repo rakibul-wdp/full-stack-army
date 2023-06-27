@@ -4,9 +4,9 @@ const Home = () => {
   const [count, setCount] = useState(0);
 
   const result = count || 50;
-  console.log(result);
+  // console.log(result);
 
-  count && console.log(count)
+  // count && console.log(count)
 
 
   return (
