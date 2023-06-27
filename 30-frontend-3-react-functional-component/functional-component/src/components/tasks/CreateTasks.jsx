@@ -6,7 +6,14 @@ const CreateTasks = ({ addNewTask }) => {
   return (
     <div>
       <input type="text" name="task" id="task" value={text} onChange={(event) => setText(event.target.value)} />
-      <button onClick={() => { addNewTask(text) }}>Create Task</button>
+      <button onClick={() => {
+        if (text) {
+          addNewTask(text);
+          setText("");
+        } else {
+          alert("Invalid Text")
+        }
+      }} >Create Task</button>
     </div>
   )
 }
