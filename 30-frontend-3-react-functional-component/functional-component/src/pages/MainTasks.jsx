@@ -1,6 +1,7 @@
 import React, { useState } from 'react'
 import CreateTasks from '../components/tasks/CreateTasks';
 import shortid from 'shortid';
+import ShowTasks from '../components/tasks/ShowTasks';
 
 const MainTasks = () => {
   const [tasks, setTasks] = useState([]);
@@ -21,11 +22,7 @@ const MainTasks = () => {
     <div>
       <h1>Tasks</h1>
       <CreateTasks addNewTask={addNewTask} />
-      {
-        tasks.map((task) => (
-          <h2 key={task.id}>{task.text}</h2>
-        ))
-      }
+      <ShowTasks tasks={tasks} />
     </div>
   )
 }
