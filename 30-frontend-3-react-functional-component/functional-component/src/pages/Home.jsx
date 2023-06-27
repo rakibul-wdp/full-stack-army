@@ -1,6 +1,14 @@
-import React from 'react'
+import React, { useState } from 'react'
 
 const Home = () => {
+  const [count, setCount] = useState(0);
+
+  const result = count || 50;
+  console.log(result);
+
+  count && console.log(count)
+
+
   return (
     <div className='home'>
       <nav>
