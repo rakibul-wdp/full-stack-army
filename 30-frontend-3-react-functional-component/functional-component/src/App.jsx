@@ -4,6 +4,7 @@ import Form from './pages/Form';
 import Home from './pages/Home';
 import Tasks from './pages/Tasks';
 import MainTasks from './pages/MainTasks';
+import ProductCard from './pages/ProductCard';
 
 function App() {
   return (
@@ -14,6 +15,7 @@ function App() {
           <Route path='/form' element={<Form />} />
           <Route path='/tasks' element={<Tasks />} />
           <Route path='/todo' element={<MainTasks />} />
+          <Route path='/card' element={<ProductCard />} />
         </Routes>
       </BrowserRouter>
     </div>
