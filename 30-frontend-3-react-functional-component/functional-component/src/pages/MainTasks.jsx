@@ -3,6 +3,7 @@ import CreateTasks from '../components/tasks/CreateTasks';
 import shortid from 'shortid';
 import ShowTasks from '../components/tasks/ShowTasks';
 import Visibility from '../components/tasks/Visibility';
+import ShowFilteredTasks from '../components/tasks/ShowFilteredTasks';
 
 const MainTasks = () => {
   const [tasks, setTasks] = useState([]);
@@ -38,15 +39,18 @@ const MainTasks = () => {
   const completed = () => {
     const updatedTasks = tasks.filter((task) => task.isCompleted === true);
     setFilteredTasks(updatedTasks);
+    setVisibility("completed");
   }
 
   const incomplete = () => {
     const updatedTasks = tasks.filter((task) => task.isCompleted === false);
     setFilteredTasks(updatedTasks);
+    setVisibility("incomplete");
   }
 
   const allTasks = () => {
-    setTasks(tasks);
+    setFilteredTasks(tasks);
+    setVisibility("all");
   }
 
   const taskDelete = (id) => {
@@ -61,7 +65,9 @@ const MainTasks = () => {
         <CreateTasks addNewTask={addNewTask} />
         <Visibility completed={completed} incomplete={incomplete} allTasks={allTasks} />
       </div>
-      <ShowTasks tasks={tasks} taskDelete={taskDelete} taskComplete={taskComplete} />
+      {
+        visibility === "all" ? <ShowTasks tasks={tasks} taskDelete={taskDelete} taskComplete={taskComplete} /> : <ShowFilteredTasks filteredTasks={filteredTasks} taskDelete={taskDelete} taskComplete={taskComplete} />
+      }
     </div>
   )
 }
