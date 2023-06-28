@@ -18,13 +18,26 @@ const MainTasks = () => {
     setTasks([task, ...tasks]);
   }
 
+  const taskDelete = (id) => {
+    const updatedTasks = tasks.filter((task) => task.id !== id);
+    setTasks(updatedTasks);
+  }
+
   return (
     <div>
       <h1>Tasks</h1>
       <CreateTasks addNewTask={addNewTask} />
-      <ShowTasks tasks={tasks} />
+      <ShowTasks tasks={tasks} taskDelete={taskDelete} />
     </div>
   )
 }
 
 export default MainTasks;
+
+/**
+ * Create New Task
+ * Display All Tasks
+ * Filter Tasks By Complete Incomplete and All
+ * Delete Tasks
+ * Edit TAsks
+ */
