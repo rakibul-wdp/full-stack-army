@@ -6,6 +6,7 @@ import Visibility from '../components/tasks/Visibility';
 
 const MainTasks = () => {
   const [tasks, setTasks] = useState([]);
+  const [filteredTasks, setFilteredTasks] = useState([]);
   const [visibility, setVisibility] = useState("all");
 
   const addNewTask = (text) => {
@@ -20,8 +21,6 @@ const MainTasks = () => {
   }
 
   const taskComplete = (isCompleted, id) => {
-    console.log(isCompleted, id);
-
     const updatedTasks = tasks.map((task) => {
       if (task.id === id) {
         return {
@@ -36,6 +35,20 @@ const MainTasks = () => {
     setTasks(updatedTasks);
   }
 
+  const completed = () => {
+    const updatedTasks = tasks.filter((task) => task.isCompleted === true);
+    setFilteredTasks(updatedTasks);
+  }
+
+  const incomplete = () => {
+    const updatedTasks = tasks.filter((task) => task.isCompleted === false);
+    setFilteredTasks(updatedTasks);
+  }
+
+  const allTasks = () => {
+    setTasks(tasks);
+  }
+
   const taskDelete = (id) => {
     const updatedTasks = tasks.filter((task) => task.id !== id);
     setTasks(updatedTasks);
@@ -46,7 +59,7 @@ const MainTasks = () => {
       <h1>Tasks</h1>
       <div style={{ display: "flex", gap: "15px" }}>
         <CreateTasks addNewTask={addNewTask} />
-        <Visibility />
+        <Visibility completed={completed} incomplete={incomplete} allTasks={allTasks} />
       </div>
       <ShowTasks tasks={tasks} taskDelete={taskDelete} taskComplete={taskComplete} />
     </div>
