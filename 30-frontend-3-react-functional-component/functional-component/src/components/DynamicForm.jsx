@@ -30,6 +30,11 @@ const formFields = {
     type: "date",
     label: "What is Your Birth Date",
     placeholder: "01-01-2023"
+  },
+  age: {
+    type: "number",
+    label: "What is Your Current Age?",
+    placeholder: "20"
   }
 };
 
