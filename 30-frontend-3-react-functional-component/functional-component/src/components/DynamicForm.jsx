@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState } from 'react';
 
 const formFields = {
   name: {
@@ -28,6 +28,19 @@ const formFields = {
   }
 };
 
+// step no 1 - transform the object as our need
+
+const transformObject = (obj) => {
+  return Object.keys(obj).reduce((acc, cur) => {
+    acc[cur] = {
+      ...obj[cur],
+      value: ""
+    }
+
+    return acc;
+  }, {})
+}
+
 const mapObjectToArray = (obj) => {
   // const keys = Object.keys(obj);
   // const arr = keys.map((key) => {
@@ -40,14 +53,26 @@ const mapObjectToArray = (obj) => {
   // })
   // return arr;
 
-  return Object.keys(obj).map((key) => ({ name: key, ...formFields[key] }));
+  return Object.keys(obj).map((key) => ({ name: key, ...obj[key] }));
 }
 
 const DynamicForm = () => {
-  const formData = mapObjectToArray(formFields);
+  const [formState, setFormState] = useState(transformObject(formFields));
+  const formData = mapObjectToArray(formState);
+
+  const handleSubmit = (e) => {
+    e.preventDefault();
+    const values = Object.keys(formState).reduce((acc, cur) => {
+      acc[cur] = formState[cur].value
+
+      return acc;
+    }, {})
+
+    console.log(values);
+  };
 
   return (
-    <form>
+    <form onSubmit={handleSubmit}>
       {
         formData.map((form, index) => (
           <div key={index}>
@@ -57,6 +82,7 @@ const DynamicForm = () => {
               name={form.name}
               id={form.name}
               placeholder={form.placeholder}
+              value={form.value}
             />
           </div>
         ))
