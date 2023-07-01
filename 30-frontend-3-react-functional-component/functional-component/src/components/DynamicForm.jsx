@@ -2,19 +2,19 @@ import React, { useState } from 'react';
 
 const formFields = {
   name: {
-    "label": "What is Your Name?",
-    "type": "text",
-    "placeholder": "John Doe"
+    label: "What is Your Name?",
+    type: "text",
+    placeholder: "John Doe"
   },
   email: {
-    "type": "email",
-    "label": "What is Your Email?",
-    "placeholder": "john@example.com"
+    type: "email",
+    label: "What is Your Email?",
+    placeholder: "john@example.com"
   },
   phone: {
-    "type": "tel",
-    "label": "What is Your Phone?",
-    "placeholder": "+8801580530145"
+    type: "tel",
+    label: "What is Your Phone?",
+    placeholder: "+8801580530145"
   },
   password: {
     type: "password",
@@ -25,6 +25,11 @@ const formFields = {
     type: "color",
     label: "What is Your Favorite Color?",
     placeholder: "red"
+  },
+  birthDay: {
+    type: "date",
+    label: "What is Your Birth Date",
+    placeholder: "01-01-2023"
   }
 };
 
@@ -71,6 +76,16 @@ const DynamicForm = () => {
     console.log(values);
   };
 
+  const handleChange = (e) => {
+    setFormState({
+      ...formState,
+      [e.target.name]: {
+        ...formState[e.target.name],
+        value: e.target.value,
+      }
+    })
+  }
+
   return (
     <form onSubmit={handleSubmit}>
       {
@@ -83,6 +98,7 @@ const DynamicForm = () => {
               id={form.name}
               placeholder={form.placeholder}
               value={form.value}
+              onChange={handleChange}
             />
           </div>
         ))
