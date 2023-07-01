@@ -1,5 +1,5 @@
 import React from 'react';
-import { socialIcons, product } from '../mockData/socialIcons';
+import { product } from '../mockData/socialIcons';
 
 const ProductCard = () => {
   return (
