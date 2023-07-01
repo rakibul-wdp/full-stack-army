@@ -1,20 +1,30 @@
 import React from 'react';
 
 const formFields = {
-  "name": {
+  name: {
     "label": "What is Your Name?",
     "type": "text",
     "placeholder": "John Doe"
   },
-  "email": {
+  email: {
     "type": "email",
     "label": "What is Your Email?",
     "placeholder": "john@example.com"
   },
-  "phone": {
+  phone: {
     "type": "tel",
     "label": "What is Your Phone?",
     "placeholder": "+8801580530145"
+  },
+  password: {
+    type: "password",
+    label: "What is Your Password?",
+    placeholder: "******"
+  },
+  color: {
+    type: "color",
+    label: "What is Your Favorite Color?",
+    placeholder: "red"
   }
 };
 
@@ -33,11 +43,28 @@ const mapObjectToArray = (obj) => {
   return Object.keys(obj).map((key) => ({ name: key, ...formFields[key] }));
 }
 
-console.log(mapObjectToArray(formFields));
-
 const DynamicForm = () => {
+  const formData = mapObjectToArray(formFields);
+
   return (
-    <div>DynamicForm</div>
+    <form>
+      {
+        formData.map((form, index) => (
+          <div key={index}>
+            <label>{form.label}</label>
+            <input
+              type={form.type}
+              name={form.name}
+              id={form.name}
+              placeholder={form.placeholder}
+            />
+          </div>
+        ))
+      }
+      <div>
+        <button type="submit">Submit</button>
+      </div>
+    </form>
   )
 }
 
