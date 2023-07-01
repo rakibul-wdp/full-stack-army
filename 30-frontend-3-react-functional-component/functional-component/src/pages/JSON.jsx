@@ -1,4 +1,5 @@
 import React, { useState } from 'react'
+import DynamicForm from '../components/DynamicForm';
 
 const JSON = () => {
   const [formState, setFormState] = useState({
@@ -21,7 +22,8 @@ const JSON = () => {
 
   return (
     <div>
-      <form onSubmit={handleSubmit}>
+      <DynamicForm />
+      {/* <form onSubmit={handleSubmit}>
         <div>
           <label>What is Your Name?</label>
           <input onChange={handleChange} value={formState.name} type="text" name="name" id="name" placeholder='John Doe' />
@@ -37,7 +39,7 @@ const JSON = () => {
         <div>
           <button type="submit">Submit</button>
         </div>
-      </form>
+      </form> */}
     </div>
   )
 }
