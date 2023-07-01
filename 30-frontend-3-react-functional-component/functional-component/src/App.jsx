@@ -5,6 +5,7 @@ import Home from './pages/Home';
 import Tasks from './pages/Tasks';
 import MainTasks from './pages/MainTasks';
 import ProductCard from './pages/ProductCard';
+import JSON from './pages/JSON';
 
 function App() {
   return (
@@ -16,6 +17,7 @@ function App() {
           <Route path='/tasks' element={<Tasks />} />
           <Route path='/todo' element={<MainTasks />} />
           <Route path='/card' element={<ProductCard />} />
+          <Route path='/json' element={<JSON />} />
         </Routes>
       </BrowserRouter>
     </div>
