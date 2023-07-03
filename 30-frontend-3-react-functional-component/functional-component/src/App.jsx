@@ -7,6 +7,7 @@ import MainTasks from './pages/MainTasks';
 import ProductCard from './pages/ProductCard';
 import JSON from './pages/JSON';
 import Props from './pages/Props';
+import State from './pages/State';
 
 function App() {
   return (
@@ -20,6 +21,7 @@ function App() {
           <Route path='/card' element={<ProductCard />} />
           <Route path='/json' element={<JSON />} />
           <Route path='/props' element={<Props />} />
+          <Route path='/state' element={<State />} />
         </Routes>
       </BrowserRouter>
     </div>
