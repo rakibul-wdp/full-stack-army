@@ -3,12 +3,13 @@ import ListItem from '../components/ListItem';
 import { inputs } from '../mockData/inputs';
 
 const Props = () => {
-  const listArr = inputs.map((item) => <ListItem title={item.text} key={item.id} />);
 
   return (
     <div>
       <ul>
-        {listArr}
+        {
+          inputs.map((item) => <ListItem title={item.text} checked={item.checked} key={item.id} />)
+        }
       </ul>
     </div>
   )

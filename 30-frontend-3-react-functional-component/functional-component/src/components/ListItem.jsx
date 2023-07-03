@@ -1,10 +1,10 @@
 import React from 'react';
 
-const ListItem = () => {
+const ListItem = ({ title, checked }) => {
   return (
     <li style={{ listStyleType: "none", display: "flex", gap: "10px" }}>
-      <input type="checkbox" name="" id="" />
-      <p>Please check it</p>
+      <input checked={checked} type="checkbox" name="" id="" />
+      <p>{title}</p>
       <button>Delete</button>
     </li>
   )
