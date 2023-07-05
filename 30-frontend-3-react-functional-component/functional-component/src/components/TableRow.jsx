@@ -10,8 +10,8 @@ const TableRow = ({ id, productName, stock, price, quantity, total, increment, d
       <td>{quantity}</td>
       <td>{total}</td>
       <td>
-        <button onClick={() => increment(id)}>+</button>
-        <button onClick={() => decrement(id)}>-</button>
+        <button disabled={stock === 0} onClick={() => increment(id)}>+</button>
+        <button disabled={quantity === 0} onClick={() => decrement(id)}>-</button>
       </td>
     </tr>
   )
