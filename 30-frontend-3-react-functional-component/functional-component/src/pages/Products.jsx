@@ -10,17 +10,27 @@ const Products = () => {
   })));
 
   const incrementQuantity = (id) => {
-    const newProducts = products.map(product => {
-      if (id == product.id) {
+    setProducts(products.map(product => {
+      if (id == product.id && product.stock > 0) {
         product.quantity++;
         product.stock--;
         product.total = product.quantity * product.price;
       }
 
       return product
-    });
+    }))
+  };
 
-    setProducts(newProducts)
+  const decrementQuantity = (id) => {
+    setProducts(products.map(product => {
+      if (id == product.id && product.quantity > 0) {
+        product.quantity--;
+        product.stock++;
+        product.total = product.quantity * product.price;
+      }
+
+      return product
+    }))
   };
 
   return (
@@ -40,7 +50,7 @@ const Products = () => {
         </thead>
         <tbody>
           {
-            products.map((product) => <TableRow increment={incrementQuantity} {...product} key={product.id} />)
+            products.map((product) => <TableRow decrement={decrementQuantity} increment={incrementQuantity} {...product} key={product.id} />)
           }
         </tbody>
       </table>
