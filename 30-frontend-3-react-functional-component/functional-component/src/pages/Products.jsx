@@ -33,6 +33,8 @@ const Products = () => {
     }))
   };
 
+  const total = products.reduce((acc, cur) => acc + cur.total, 0);
+
   return (
     <div>
       <h1>Products List</h1>
@@ -54,6 +56,7 @@ const Products = () => {
           }
         </tbody>
       </table>
+      {total > 0 && <p>Total: {total}</p>}
     </div>
   )
 }
