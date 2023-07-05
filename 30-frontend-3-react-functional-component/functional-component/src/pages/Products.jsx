@@ -9,7 +9,19 @@ const Products = () => {
     total: 0,
   })));
 
-  const incrementQuantity = (id) => { console.log(id) };
+  const incrementQuantity = (id) => {
+    const newProducts = products.map(product => {
+      if (id == product.id) {
+        product.quantity++;
+        product.stock--;
+        product.total = product.quantity * product.price;
+      }
+
+      return product
+    });
+
+    setProducts(newProducts)
+  };
 
   return (
     <div>
@@ -28,7 +40,7 @@ const Products = () => {
         </thead>
         <tbody>
           {
-            products.map((product) => <TableRow increment={() => incrementQuantity(product.id)} {...product} key={product.id} />)
+            products.map((product) => <TableRow increment={incrementQuantity} {...product} key={product.id} />)
           }
         </tbody>
       </table>
