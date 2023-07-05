@@ -1,8 +1,14 @@
-import React from 'react'
-import { products } from '../mockData/products';
+import React, { useState } from 'react'
+import { productsList } from '../mockData/products';
 import TableRow from '../components/TableRow';
 
 const Products = () => {
+  const [products, setProducts] = useState(productsList.map((item) => ({
+    ...item,
+    quantity: 0,
+    total: 0,
+  })));
+
   return (
     <div>
       <h1>Products List</h1>
