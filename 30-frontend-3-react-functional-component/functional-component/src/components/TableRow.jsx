@@ -1,6 +1,6 @@
 import React from 'react'
 
-const TableRow = ({ id, productName, stock, price, quantity, total }) => {
+const TableRow = ({ id, productName, stock, price, quantity, total, increment }) => {
   return (
     <tr>
       <td>{id}</td>
@@ -10,7 +10,7 @@ const TableRow = ({ id, productName, stock, price, quantity, total }) => {
       <td>{quantity}</td>
       <td>{total}</td>
       <td>
-        <button>+</button>
+        <button onClick={increment}>+</button>
         <button>-</button>
       </td>
     </tr>

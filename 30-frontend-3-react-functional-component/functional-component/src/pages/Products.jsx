@@ -9,6 +9,8 @@ const Products = () => {
     total: 0,
   })));
 
+  const incrementQuantity = (id) => { console.log(id) };
+
   return (
     <div>
       <h1>Products List</h1>
@@ -26,7 +28,7 @@ const Products = () => {
         </thead>
         <tbody>
           {
-            products.map((product) => <TableRow {...product} key={product.id} />)
+            products.map((product) => <TableRow increment={() => incrementQuantity(product.id)} {...product} key={product.id} />)
           }
         </tbody>
       </table>
