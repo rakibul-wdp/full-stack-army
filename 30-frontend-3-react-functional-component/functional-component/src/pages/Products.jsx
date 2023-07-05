@@ -1,5 +1,6 @@
 import React from 'react'
 import { products } from '../mockData/products';
+import TableRow from '../components/TableRow';
 
 const Products = () => {
   return (
@@ -14,10 +15,13 @@ const Products = () => {
             <th>Price</th>
             <th>Quantity</th>
             <th>Total</th>
+            <th>Actions</th>
           </tr>
         </thead>
         <tbody>
-
+          {
+            products.map((product) => <TableRow {...product} key={product.id} />)
+          }
         </tbody>
       </table>
     </div>

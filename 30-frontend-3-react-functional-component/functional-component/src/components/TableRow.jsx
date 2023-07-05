@@ -1,14 +1,18 @@
 import React from 'react'
 
-const TableRow = () => {
+const TableRow = ({ id, productName, stock, price, quantity, total }) => {
   return (
     <tr>
-      <td>ID</td>
-      <td>Name</td>
-      <td>Stock</td>
-      <td>Price</td>
-      <td>Quantity</td>
-      <td>Total</td>
+      <td>{id}</td>
+      <td>{productName}</td>
+      <td>{stock}</td>
+      <td>{price}</td>
+      <td>{quantity}</td>
+      <td>{total}</td>
+      <td>
+        <button>+</button>
+        <button>-</button>
+      </td>
     </tr>
   )
 }
