@@ -9,6 +9,7 @@ import JSON from './pages/JSON';
 import Props from './pages/Props';
 import State from './pages/State';
 import Products from './pages/Products';
+import Card from './pages/Card';
 
 function App() {
   return (
@@ -24,6 +25,7 @@ function App() {
           <Route path='/props' element={<Props />} />
           <Route path='/state' element={<State />} />
           <Route path='/products' element={<Products />} />
+          <Route path='/task-card' element={<Card />} />
         </Routes>
       </BrowserRouter>
     </div>
