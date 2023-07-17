@@ -1,11 +1,53 @@
+import { useState } from "react";
+
+const initialState = {
+  a: 0,
+  b: 0,
+};
+
 const Calculator = () => {
+  const [inputState, setInputState] = useState({ ...initialState });
+
+  // const handleInputFields = (e) => {
+  //   setInputState({
+  //     ...inputState,
+  //     [e.target.name]: parseInt(e.target.value),
+  //   });
+  // };
+
+  const handleFieldA = (e) => {
+    setInputState({
+      ...inputState,
+      a: parseInt(e.target.value),
+    });
+  };
+
+  const handleFieldB = (e) => {
+    setInputState({
+      ...inputState,
+      b: parseInt(e.target.value),
+    });
+  };
+
   return (
     <div style={{ width: "50%", margin: "0 auto" }}>
       <h1>Result: 0</h1>
       <div>
         <p>Inputs</p>
-        <input type="number" name="" id="" />
-        <input type="number" name="" id="" />
+        <input
+          value={inputState.a}
+          onChange={handleFieldA}
+          type="number"
+          name="a"
+          id=""
+        />
+        <input
+          value={inputState.b}
+          onChange={handleFieldB}
+          type="number"
+          name="b"
+          id=""
+        />
       </div>
       <div>
         <p>Operations</p>
