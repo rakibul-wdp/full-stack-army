@@ -1,5 +1,6 @@
 import { BrowserRouter, Route, Routes } from "react-router-dom";
 import "./App.css";
+import Calculator from "./pages/Calculator";
 import Card from "./pages/Card";
 import Form from "./pages/Form";
 import Home from "./pages/Home";
@@ -28,6 +29,7 @@ function App() {
           <Route path="/products" element={<Products />} />
           <Route path="/task-card" element={<Card />} />
           <Route path="/json-jsx" element={<JsonJsx />} />
+          <Route path="/calculator" element={<Calculator />} />
         </Routes>
       </BrowserRouter>
     </div>
