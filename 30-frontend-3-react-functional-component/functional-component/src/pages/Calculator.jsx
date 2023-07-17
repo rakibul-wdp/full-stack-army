@@ -15,17 +15,24 @@ const Calculator = () => {
   //   });
   // };
 
-  const handleFieldA = (e) => {
-    setInputState({
-      ...inputState,
-      a: parseInt(e.target.value),
-    });
-  };
+  // const handleFieldA = (e) => {
+  //   setInputState({
+  //     ...inputState,
+  //     a: parseInt(e.target.value),
+  //   });
+  // };
 
-  const handleFieldB = (e) => {
+  // const handleFieldB = (e) => {
+  //   setInputState({
+  //     ...inputState,
+  //     b: parseInt(e.target.value),
+  //   });
+  // };
+
+  const handleInputFields = (key, value) => {
     setInputState({
       ...inputState,
-      b: parseInt(e.target.value),
+      [key]: value,
     });
   };
 
@@ -36,14 +43,14 @@ const Calculator = () => {
         <p>Inputs</p>
         <input
           value={inputState.a}
-          onChange={handleFieldA}
+          onChange={(e) => handleInputFields("a", e.target.value)}
           type="number"
           name="a"
           id=""
         />
         <input
           value={inputState.b}
-          onChange={handleFieldB}
+          onChange={(e) => handleInputFields("b", e.target.value)}
           type="number"
           name="b"
           id=""
