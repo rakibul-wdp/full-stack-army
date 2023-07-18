@@ -7,7 +7,7 @@
  * Restore the historyItem
  */
 
-import { useState } from "react";
+import { useEffect, useState } from "react";
 
 function* generateId() {
   let id = 1;
@@ -19,14 +19,21 @@ function* generateId() {
 const getId = generateId();
 
 const initialState = {
-  a: 0,
-  b: 0,
+  a: 20,
+  b: 10,
 };
 
 const Calculator = () => {
   const [inputState, setInputState] = useState({ ...initialState });
   const [result, setResult] = useState(0);
   const [histories, setHistories] = useState([]);
+  const [restoredHistory, setRestoredHistory] = useState(null);
+
+  useEffect(() => {
+    if (restoredHistory !== null) {
+      handleArithmeticsOps(restoredHistory.operations);
+    }
+  }, [inputState]);
 
   const handleInputFields = (e) => {
     setInputState({
@@ -83,6 +90,12 @@ const Calculator = () => {
     const result = f(operations);
     setResult(result);
 
+    if (!restoredHistory) {
+      generateHistory(operations, result);
+    }
+  };
+
+  const generateHistory = (operations, result) => {
     const historyItem = {
       id: getId.next().value,
       inputs: inputState,
@@ -94,8 +107,10 @@ const Calculator = () => {
   };
 
   const handleRestoreBtn = (historyItem) => {
-    setInputState({ ...historyItem.inputs });
-    handleArithmeticsOps(historyItem.operations);
+    setInputState(() => {
+      return { ...historyItem.inputs };
+    });
+    setRestoredHistory(historyItem);
   };
 
   return (
@@ -142,7 +157,13 @@ const Calculator = () => {
                 </p>
                 <small>{historyItem.date.toLocaleDateString()}</small>
                 <br />
-                <button onClick={() => handleRestoreBtn(historyItem)}>
+                <button
+                  onClick={() => handleRestoreBtn(historyItem)}
+                  disabled={
+                    restoredHistory !== null &&
+                    restoredHistory.id === historyItem.id
+                  }
+                >
                   Restore
                 </button>
               </li>
