@@ -93,6 +93,11 @@ const Calculator = () => {
     setHistories([historyItem, ...histories]);
   };
 
+  const handleRestoreBtn = (historyItem) => {
+    setInputState({ ...historyItem.inputs });
+    handleArithmeticsOps(historyItem.operations);
+  };
+
   return (
     <div style={{ width: "50%", margin: "0 auto" }}>
       <h1>Result: {result}</h1>
@@ -137,7 +142,9 @@ const Calculator = () => {
                 </p>
                 <small>{historyItem.date.toLocaleDateString()}</small>
                 <br />
-                <button>Restore</button>
+                <button onClick={() => handleRestoreBtn(historyItem)}>
+                  Restore
+                </button>
               </li>
             ))}
           </ul>
