@@ -9,6 +9,15 @@
 
 import { useState } from "react";
 
+function* generateId() {
+  let id = 1;
+  while (true) {
+    yield id++;
+  }
+}
+
+const getId = generateId();
+
 const initialState = {
   a: 0,
   b: 0,
@@ -66,6 +75,14 @@ const Calculator = () => {
     `
     );
     setResult(f(operations));
+
+    const history = {
+      id: getId.next().value,
+      inputs: inputState,
+      operations,
+      date: new Date(),
+    };
+    console.log(history);
   };
 
   return (
@@ -101,6 +118,14 @@ const Calculator = () => {
         <p>
           <small>There is no History</small>
         </p>
+        <ul>
+          <li>
+            <p>Operation: 10 + 20, Result: 30</p>
+            <small>18/7/2023</small>
+            <br />
+            <button>Restore</button>
+          </li>
+        </ul>
       </div>
     </div>
   );
