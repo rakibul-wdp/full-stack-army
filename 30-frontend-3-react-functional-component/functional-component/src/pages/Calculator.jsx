@@ -3,8 +3,8 @@
  * Handle user input fields
  * Handle operations
  * Handle a list of histories
- * Render history list
- * Restore the history
+ * Render historyItem list
+ * Restore the historyItem
  */
 
 import { useState } from "react";
@@ -26,6 +26,7 @@ const initialState = {
 const Calculator = () => {
   const [inputState, setInputState] = useState({ ...initialState });
   const [result, setResult] = useState(0);
+  const [histories, setHistories] = useState([]);
 
   const handleInputFields = (e) => {
     setInputState({
@@ -79,15 +80,17 @@ const Calculator = () => {
         return ${inputState.a} ${operations} ${inputState.b}
     `
     );
-    setResult(f(operations));
+    const result = f(operations);
+    setResult(result);
 
-    const history = {
+    const historyItem = {
       id: getId.next().value,
       inputs: inputState,
       operations,
+      result,
       date: new Date(),
     };
-    console.log(history);
+    setHistories([historyItem, ...histories]);
   };
 
   return (
@@ -120,17 +123,25 @@ const Calculator = () => {
       </div>
       <div>
         <p>History</p>
-        <p>
-          <small>There is no History</small>
-        </p>
-        <ul>
-          <li>
-            <p>Operation: 10 + 20, Result: 30</p>
-            <small>18/7/2023</small>
-            <br />
-            <button>Restore</button>
-          </li>
-        </ul>
+        {histories.length === 0 ? (
+          <p>
+            <small>There is no History</small>
+          </p>
+        ) : (
+          <ul>
+            {histories.map((historyItem) => (
+              <li key={historyItem.id}>
+                <p>
+                  Operation: {historyItem.inputs.a} {historyItem.operations}{" "}
+                  {historyItem.inputs.b}, Result: {historyItem.result}
+                </p>
+                <small>{historyItem.date.toLocaleDateString()}</small>
+                <br />
+                <button>Restore</button>
+              </li>
+            ))}
+          </ul>
+        )}
       </div>
     </div>
   );
