@@ -1,3 +1,12 @@
+/**
+ * TODO:
+ * Handle user input fields
+ * Handle operations
+ * Handle a list of histories
+ * Render history list
+ * Restore the history
+ */
+
 import { useState } from "react";
 
 const initialState = {
@@ -8,12 +17,16 @@ const initialState = {
 const Calculator = () => {
   const [inputState, setInputState] = useState({ ...initialState });
 
-  // const handleInputFields = (e) => {
-  //   setInputState({
-  //     ...inputState,
-  //     [e.target.name]: parseInt(e.target.value),
-  //   });
-  // };
+  const handleInputFields = (e) => {
+    setInputState({
+      ...inputState,
+      [e.target.name]: parseInt(e.target.value),
+    });
+  };
+
+  const handleClearOps = () => {
+    setInputState({ ...initialState });
+  };
 
   // const handleFieldA = (e) => {
   //   setInputState({
@@ -36,12 +49,12 @@ const Calculator = () => {
   //   });
   // };
 
-  const handleInputFields = (inp) => {
-    setInputState({
-      ...inputState, // previous state
-      ...inp, // new state
-    });
-  };
+  // const handleInputFields = (inp) => {
+  //   setInputState({
+  //     ...inputState, // previous state
+  //     ...inp, // new state
+  //   });
+  // };
 
   return (
     <div style={{ width: "50%", margin: "0 auto" }}>
@@ -50,14 +63,14 @@ const Calculator = () => {
         <p>Inputs</p>
         <input
           value={inputState.a}
-          onChange={(e) => handleInputFields({ a: parseInt(e.target.value) })}
+          onChange={handleInputFields}
           type="number"
           name="a"
           id=""
         />
         <input
           value={inputState.b}
-          onChange={(e) => handleInputFields({ b: parseInt(e.target.value) })}
+          onChange={handleInputFields}
           type="number"
           name="b"
           id=""
@@ -69,7 +82,7 @@ const Calculator = () => {
         <button>-</button>
         <button>*</button>
         <button>/</button>
-        <button>Clear</button>
+        <button onClick={handleClearOps}>Clear</button>
       </div>
       <div>
         <p>History</p>
