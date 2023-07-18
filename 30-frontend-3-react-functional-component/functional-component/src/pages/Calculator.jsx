@@ -68,6 +68,11 @@ const Calculator = () => {
   // };
 
   const handleArithmeticsOps = (operations) => {
+    if (!inputState.a || !inputState.b) {
+      alert("Invalid Input");
+      return;
+    }
+
     const f = new Function(
       "operation",
       `
