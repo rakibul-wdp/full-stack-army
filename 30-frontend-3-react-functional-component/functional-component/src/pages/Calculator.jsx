@@ -8,6 +8,7 @@
  */
 
 import { useEffect, useState } from "react";
+import Button from "../components/ui/Button";
 import NumberField from "../components/ui/NumberField";
 
 function* generateId() {
@@ -129,24 +130,16 @@ const Calculator = () => {
           onChange={handleInputFields}
           name={"b"}
         />
-        {/* <input
-          value={inputState.a}
-          onChange={handleInputFields}
-          type="number"
-          name="a"
-          id=""
-        />
-        <input
-          value={inputState.b}
-          onChange={handleInputFields}
-          type="number"
-          name="b"
-          id=""
-        /> */}
       </div>
       <div>
         <p>Operations</p>
-        <button onClick={() => handleArithmeticsOps("+")}>+</button>
+        <Button
+          text={"+"}
+          onClick={() => handleArithmeticsOps("+")}
+          customStyle={{ background: "green" }}
+          disabled={true}
+        />
+        {/* <button onClick={() => handleArithmeticsOps("+")}>+</button> */}
         <button onClick={() => handleArithmeticsOps("-")}>-</button>
         <button onClick={() => handleArithmeticsOps("*")}>*</button>
         <button onClick={() => handleArithmeticsOps("/")}>/</button>

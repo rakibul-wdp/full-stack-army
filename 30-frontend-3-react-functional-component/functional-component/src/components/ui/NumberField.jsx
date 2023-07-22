@@ -1,3 +1,5 @@
+import PropTypes from "prop-types";
+
 const NumberField = ({ value, onChange, name }) => {
   const style = {
     padding: "0.25rem",
@@ -18,6 +20,12 @@ const NumberField = ({ value, onChange, name }) => {
       onChange={onChange}
     />
   );
+};
+
+NumberField.propTypes = {
+  value: PropTypes.number.isRequired,
+  name: PropTypes.string.isRequired,
+  onChange: PropTypes.func.isRequired,
 };
 
 export default NumberField;
