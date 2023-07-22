@@ -8,6 +8,7 @@
  */
 
 import { useEffect, useState } from "react";
+import NumberField from "../components/ui/NumberField";
 
 function* generateId() {
   let id = 1;
@@ -118,7 +119,17 @@ const Calculator = () => {
       <h1>Result: {result}</h1>
       <div>
         <p>Inputs</p>
-        <input
+        <NumberField
+          value={inputState.a}
+          onChange={handleInputFields}
+          name={"a"}
+        />
+        <NumberField
+          value={inputState.b}
+          onChange={handleInputFields}
+          name={"b"}
+        />
+        {/* <input
           value={inputState.a}
           onChange={handleInputFields}
           type="number"
@@ -131,7 +142,7 @@ const Calculator = () => {
           type="number"
           name="b"
           id=""
-        />
+        /> */}
       </div>
       <div>
         <p>Operations</p>
