@@ -32,7 +32,7 @@ const OperationSection = ({ handleArithmeticsOps, handleClearOps }) => {
     {
       id: shortid.generate(),
       text: "clear",
-      onClick: () => handleClearOps,
+      onClick: handleClearOps,
     },
   ];
 
