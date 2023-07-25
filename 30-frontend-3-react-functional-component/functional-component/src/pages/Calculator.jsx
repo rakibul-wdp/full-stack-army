@@ -8,6 +8,7 @@
  */
 
 import { useEffect, useState } from "react";
+import HistorySection from "../components/history/HistorySection";
 import InputSection from "../components/inputs/InputSection";
 import OperationSection from "../components/operation/OperationSection";
 
@@ -127,36 +128,12 @@ const Calculator = () => {
         handleArithmeticsOps={handleArithmeticsOps}
         handleClearOps={handleClearOps}
       />
-      <div>
-        <p>History</p>
-        {histories.length === 0 ? (
-          <p>
-            <small>There is no History</small>
-          </p>
-        ) : (
-          <ul>
-            {histories.map((historyItem) => (
-              <li key={historyItem.id}>
-                <p>
-                  Operation: {historyItem.inputs.a} {historyItem.operations}{" "}
-                  {historyItem.inputs.b}, Result: {historyItem.result}
-                </p>
-                <small>{historyItem.date.toLocaleDateString()}</small>
-                <br />
-                <button
-                  onClick={() => handleRestoreBtn(historyItem)}
-                  disabled={
-                    restoredHistory !== null &&
-                    restoredHistory.id === historyItem.id
-                  }
-                >
-                  Restore
-                </button>
-              </li>
-            ))}
-          </ul>
-        )}
-      </div>
+
+      <HistorySection
+        histories={histories}
+        restoredHistory={restoredHistory}
+        handleRestoreBtn={handleRestoreBtn}
+      />
     </div>
   );
 };

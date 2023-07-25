@@ -1,6 +1,7 @@
 import PropTypes from "prop-types";
+import Button from "../ui/Button";
 
-const HistoryItem = ({ historyItem, disabled }) => {
+const HistoryItem = ({ historyItem, disabled, handleRestoreBtn }) => {
   return (
     <li key={historyItem.id}>
       <p>
@@ -9,9 +10,11 @@ const HistoryItem = ({ historyItem, disabled }) => {
       </p>
       <small>{historyItem.date.toLocaleDateString()}</small>
       <br />
-      <button onClick={() => handleRestoreBtn(historyItem)} disabled={disabled}>
-        Restore
-      </button>
+      <Button
+        text="Restore"
+        onClick={() => handleRestoreBtn(historyItem)}
+        disabled={disabled}
+      />
     </li>
   );
 };
@@ -28,6 +31,7 @@ HistoryItem.propTypes = {
     date: PropTypes.object.isRequired,
   }),
   disabled: PropTypes.bool.isRequired,
+  handleRestoreBtn: PropTypes.func.isRequired,
 };
 
 HistoryItem.defaultProps = {
