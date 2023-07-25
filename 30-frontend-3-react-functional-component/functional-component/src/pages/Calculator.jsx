@@ -7,7 +7,7 @@
  * Restore the historyItem
  */
 
-import { useEffect, useState } from "react";
+import { useState } from "react";
 import HistorySection from "../components/history/HistorySection";
 import InputSection from "../components/inputs/InputSection";
 import OperationSection from "../components/operation/OperationSection";
@@ -32,12 +32,6 @@ const Calculator = () => {
   const [histories, setHistories] = useState([]);
   const [restoredHistory, setRestoredHistory] = useState(null);
 
-  useEffect(() => {
-    if (restoredHistory !== null) {
-      handleArithmeticsOps(restoredHistory.operations);
-    }
-  }, [inputState]);
-
   const handleInputFields = (e) => {
     setInputState({
       ...inputState,
@@ -49,34 +43,6 @@ const Calculator = () => {
     setInputState({ ...initialState });
     setResult(0);
   };
-
-  // const handleFieldA = (e) => {
-  //   setInputState({
-  //     ...inputState,
-  //     a: parseInt(e.target.value),
-  //   });
-  // };
-
-  // const handleFieldB = (e) => {
-  //   setInputState({
-  //     ...inputState,
-  //     b: parseInt(e.target.value),
-  //   });
-  // };
-
-  // const handleInputFields = (key, value) => {
-  //   setInputState({
-  //     ...inputState,
-  //     [key]: value,
-  //   });
-  // };
-
-  // const handleInputFields = (inp) => {
-  //   setInputState({
-  //     ...inputState, // previous state
-  //     ...inp, // new state
-  //   });
-  // };
 
   const handleArithmeticsOps = (operations) => {
     if (!inputState.a || !inputState.b) {
@@ -93,15 +59,9 @@ const Calculator = () => {
     const result = f(operations);
     setResult(result);
 
-    if (!restoredHistory) {
-      generateHistory(operations, result);
-    }
-  };
-
-  const generateHistory = (operations, result) => {
     const historyItem = {
       id: getId.next().value,
-      inputs: inputState,
+      inputs: { ...inputState },
       operations,
       result,
       date: new Date(),
@@ -110,10 +70,9 @@ const Calculator = () => {
   };
 
   const handleRestoreBtn = (historyItem) => {
-    setInputState(() => {
-      return { ...historyItem.inputs };
-    });
-    setRestoredHistory(historyItem);
+    setInputState({ ...historyItem.inputs });
+    setResult(historyItem.result);
+    setRestoredHistory(historyItem.id);
   };
 
   return (
@@ -139,3 +98,35 @@ const Calculator = () => {
 };
 
 export default Calculator;
+
+/**
+ 
+  const handleFieldA = (e) => {
+    setInputState({
+      ...inputState,
+      a: parseInt(e.target.value),
+    });
+  };
+
+  const handleFieldB = (e) => {
+    setInputState({
+      ...inputState,
+      b: parseInt(e.target.value),
+    });
+  };
+
+  const handleInputFields = (key, value) => {
+    setInputState({
+      ...inputState,
+      [key]: value,
+    });
+  };
+
+  const handleInputFields = (inp) => {
+    setInputState({
+      ...inputState, // previous state
+      ...inp, // new state
+    });
+  };
+ 
+ */
