@@ -9,7 +9,7 @@
 
 import { useEffect, useState } from "react";
 import InputSection from "../components/inputs/InputSection";
-import Button from "../components/ui/Button";
+import OperationSection from "../components/operation/OperationSection";
 
 function* generateId() {
   let id = 1;
@@ -122,20 +122,11 @@ const Calculator = () => {
         inputs={{ initialState }}
         handleInputFields={handleInputFields}
       />
-      <div>
-        <p>Operations</p>
-        <Button
-          text={"+"}
-          onClick={() => handleArithmeticsOps("+")}
-          customStyle={{ background: "green" }}
-          // disabled={true}
-        />
-        {/* <button onClick={() => handleArithmeticsOps("+")}>+</button> */}
-        <button onClick={() => handleArithmeticsOps("-")}>-</button>
-        <button onClick={() => handleArithmeticsOps("*")}>*</button>
-        <button onClick={() => handleArithmeticsOps("/")}>/</button>
-        <button onClick={handleClearOps}>Clear</button>
-      </div>
+      {/* TODO: Operation section */}
+      <OperationSection
+        handleArithmeticsOps={handleArithmeticsOps}
+        handleClearOps={handleClearOps}
+      />
       <div>
         <p>History</p>
         {histories.length === 0 ? (
