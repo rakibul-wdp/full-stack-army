@@ -1,6 +1,7 @@
 import { BrowserRouter, Route, Routes } from "react-router-dom";
 import "./App.css";
 import Calculator from "./pages/Calculator";
+import CalculatorPractice from "./pages/CalculatorPractice";
 import Card from "./pages/Card";
 import Form from "./pages/Form";
 import Home from "./pages/Home";
@@ -30,6 +31,7 @@ function App() {
           <Route path="/task-card" element={<Card />} />
           <Route path="/json-jsx" element={<JsonJsx />} />
           <Route path="/calculator" element={<Calculator />} />
+          <Route path="cal-practice" element={<CalculatorPractice />} />
         </Routes>
       </BrowserRouter>
     </div>
