@@ -1,10 +1,11 @@
 import "./App.css";
+import Contact from "./pages/Contact";
 
 function App() {
   return (
-    <div>
-      <h1>Hello World</h1>
-    </div>
+    <>
+      <Contact />
+    </>
   );
 }
 
