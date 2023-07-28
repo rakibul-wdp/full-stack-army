@@ -1,3 +1,5 @@
+/* eslint-disable react/prop-types */
+
 import { useState } from "react";
 
 const CONTACT_FORM_INIT_STATE = {
@@ -20,6 +22,7 @@ const ContactForm = ({ getContact }) => {
   const handleSubmit = (e) => {
     e.preventDefault();
     getContact(values);
+    setValues({ ...CONTACT_FORM_INIT_STATE });
   };
 
   return (

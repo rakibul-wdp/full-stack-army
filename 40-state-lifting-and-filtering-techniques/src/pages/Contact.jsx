@@ -1,5 +1,6 @@
 import { useState } from "react";
 import ContactForm from "../component/ContactForm";
+import Table from "../component/Table";
 
 const Contact = () => {
   const [contacts, setContacts] = useState([]);
@@ -7,9 +8,13 @@ const Contact = () => {
   const getContact = (contact) => {
     setContacts([].concat(contacts, contact));
   };
-  console.log(contacts);
 
-  return <ContactForm getContact={getContact} />;
+  return (
+    <>
+      <ContactForm getContact={getContact} />
+      <Table contacts={contacts} />
+    </>
+  );
 };
 
 export default Contact;
