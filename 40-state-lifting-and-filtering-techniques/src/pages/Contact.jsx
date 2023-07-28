@@ -1,17 +1,15 @@
+import { useState } from "react";
+import ContactForm from "../component/ContactForm";
+
 const Contact = () => {
-  return (
-    <form>
-      <div>
-        <label htmlFor="name">Name:</label>
-        <input type="text" name="name" id="name" />
-      </div>
-      <div>
-        <label htmlFor="email">Email:</label>
-        <input type="email" name="email" id="email" />
-      </div>
-      <input type="submit" value="Create New Contact" />
-    </form>
-  );
+  const [contacts, setContacts] = useState([]);
+
+  const getContact = (contact) => {
+    setContacts([].concat(contacts, contact));
+  };
+  console.log(contacts);
+
+  return <ContactForm getContact={getContact} />;
 };
 
 export default Contact;
