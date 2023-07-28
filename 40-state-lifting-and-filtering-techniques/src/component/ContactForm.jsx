@@ -29,7 +29,7 @@ const ContactForm = ({ getContact }) => {
   return (
     <form onSubmit={handleSubmit}>
       <div>
-        <label htmlFor="name">Name:</label>
+        <label htmlFor="name">Name: &nbsp;</label>
         <input
           type="text"
           name="name"
@@ -39,7 +39,7 @@ const ContactForm = ({ getContact }) => {
         />
       </div>
       <div>
-        <label htmlFor="email">Email:</label>
+        <label htmlFor="email">Email: &nbsp;</label>
         <input
           type="email"
           name="email"
@@ -49,7 +49,7 @@ const ContactForm = ({ getContact }) => {
         />
       </div>
       <div>
-        <label htmlFor="group">Group</label>
+        <label htmlFor="group">Group: &nbsp;</label>
         <select name="group" id="group" value={group} onChange={handleChange}>
           <option value="">Select Group</option>
           <option value="Home">Home</option>
