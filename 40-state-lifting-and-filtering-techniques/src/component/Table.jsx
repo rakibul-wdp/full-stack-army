@@ -4,6 +4,7 @@ import { useState } from "react";
 
 const Table = ({ contacts }) => {
   const [filter, setFilter] = useState("All");
+  const [searchTerm, setSearchTerm] = useState("");
 
   const handleChange = (e) => {
     setFilter(e.target.value);
@@ -14,6 +15,13 @@ const Table = ({ contacts }) => {
     filteredContacts = contacts;
   } else {
     filteredContacts = contacts.filter((contact) => contact.group === filter);
+  }
+
+  if (searchTerm) {
+    filteredContacts = filteredContacts.filter(
+      (contact) =>
+        contact.name.includes(searchTerm) || contact.email.includes(searchTerm)
+    );
   }
 
   return (
@@ -27,6 +35,14 @@ const Table = ({ contacts }) => {
           <option value="Home">Home</option>
           <option value="Office">Office</option>
         </select>
+        <input
+          type="search"
+          name=""
+          id=""
+          placeholder="Search"
+          value={searchTerm}
+          onChange={(e) => setSearchTerm(e.target.value)}
+        />
       </div>
       <table>
         <thead>
