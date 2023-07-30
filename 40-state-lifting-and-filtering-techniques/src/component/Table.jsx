@@ -10,19 +10,21 @@ const Table = ({ contacts }) => {
     setFilter(e.target.value);
   };
 
+  const searchCB = (contact) =>
+    contact.name.includes(searchTerm) || contact.email.includes(searchTerm);
+
   let filteredContacts = [];
   if (filter === "All") {
-    filteredContacts = contacts;
+    filteredContacts = searchTerm ? contacts.filter(searchCB) : contacts;
   } else {
-    filteredContacts = contacts.filter((contact) => contact.group === filter);
-  }
-
-  if (searchTerm) {
-    filteredContacts = filteredContacts.filter(
-      (contact) =>
-        contact.name.includes(searchTerm) || contact.email.includes(searchTerm)
+    filteredContacts = contacts.filter(
+      (contact) => contact.group === filter && searchCB(contact)
     );
   }
+
+  /**
+   * 1.
+   */
 
   return (
     <>
