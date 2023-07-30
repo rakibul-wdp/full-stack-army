@@ -22,10 +22,6 @@ const Table = ({ contacts }) => {
     );
   }
 
-  /**
-   * 1.
-   */
-
   return (
     <>
       <div>

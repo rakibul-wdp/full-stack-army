@@ -1,10 +1,11 @@
 import "./App.css";
-import Contact from "./pages/Contact";
+import UseEffect from "./pages/UseEffect";
 
 function App() {
   return (
     <>
-      <Contact />
+      {/* <Contact /> */}
+      <UseEffect />
     </>
   );
 }
