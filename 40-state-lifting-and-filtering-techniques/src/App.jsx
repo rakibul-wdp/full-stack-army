@@ -1,12 +1,13 @@
 import "./App.css";
-import AJAX from "./pages/AJAX";
+import Counter from "./pages/Counter";
 
 function App() {
   return (
     <>
       {/* <Contact /> */}
       {/* <UseEffect /> */}
-      <AJAX />
+      {/* <AJAX /> */}
+      <Counter />
     </>
   );
 }
