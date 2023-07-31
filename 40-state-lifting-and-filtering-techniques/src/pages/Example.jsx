@@ -1,7 +1,10 @@
 import useFetchData from "../hooks/useFetchData";
 
 const Example = () => {
-  const users = useFetchData("https://jsonplaceholder.typicode.com/users");
+  const users = useFetchData(
+    "https://jsonplaceholder.typicode.com/users",
+    (data) => data.map((item) => ({ id: item.id, name: item.name }))
+  );
   const posts = useFetchData("https://jsonplaceholder.typicode.com/posts");
   const comments = useFetchData(
     "https://jsonplaceholder.typicode.com/comments"
