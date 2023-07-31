@@ -13,7 +13,19 @@ const Example = () => {
     fetchPosts();
   }, []);
 
-  const fetchUsers = async () => {};
+  const fetchUsers = async () => {
+    setUserLoading(true);
+    try {
+      const res = await fetch("https://jsonplaceholder.typicode.com/users");
+      const data = await res.json();
+      setUsers(data);
+      setUserError("");
+      setUserLoading(false);
+    } catch (e) {
+      setUserError("server error occurred");
+      setUserLoading(false);
+    }
+  };
 
   const fetchPosts = async () => {};
 
