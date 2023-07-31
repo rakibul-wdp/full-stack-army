@@ -1,15 +1,15 @@
-import { useState } from "react";
+import useCounter from "../hooks/useCounter";
 
 const Counter = () => {
-  const [counter1, setCounter1] = useState(0);
+  const { count, handleInc, handleDec } = useCounter();
 
   return (
     <div>
       <h1>Counter</h1>
       <div>
-        <button onClick={() => setCounter1(counter1 + 1)}>+</button>
-        <span>{counter1}</span>
-        <button onClick={() => setCounter1(counter1 - 1)}>-</button>
+        <button onClick={handleInc}>+</button>
+        <span>{count}</span>
+        <button onClick={handleDec}>-</button>
       </div>
     </div>
   );
