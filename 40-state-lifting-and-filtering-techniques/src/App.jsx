@@ -1,11 +1,12 @@
 import "./App.css";
-import UseEffect from "./pages/UseEffect";
+import AJAX from "./pages/AJAX";
 
 function App() {
   return (
     <>
       {/* <Contact /> */}
-      <UseEffect />
+      {/* <UseEffect /> */}
+      <AJAX />
     </>
   );
 }
