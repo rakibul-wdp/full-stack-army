@@ -1,5 +1,5 @@
 import "./App.css";
-import Counter from "./pages/Counter";
+import Example from "./pages/Example";
 
 function App() {
   return (
@@ -7,7 +7,8 @@ function App() {
       {/* <Contact /> */}
       {/* <UseEffect /> */}
       {/* <AJAX /> */}
-      <Counter />
+      {/* <Counter /> */}
+      <Example />
     </>
   );
 }
