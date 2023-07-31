@@ -27,7 +27,19 @@ const Example = () => {
     }
   };
 
-  const fetchPosts = async () => {};
+  const fetchPosts = async () => {
+    setPostLoading(true);
+    try {
+      const res = await fetch("https://jsonplaceholder.typicode.com/posts");
+      const data = await res.json();
+      setPosts(data);
+      setPostError("");
+      setPostLoading(false);
+    } catch (e) {
+      setPostError("server error occurred");
+      setPostLoading(false);
+    }
+  };
 
   return (
     <div
