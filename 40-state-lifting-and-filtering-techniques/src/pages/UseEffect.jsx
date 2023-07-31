@@ -1,5 +1,7 @@
 import { useEffect, useState } from "react";
 
+let timeInterval = null;
+
 const UseEffect = () => {
   const [count, setCount] = useState(0);
   const [lock, setLock] = useState(false);
@@ -18,12 +20,22 @@ const UseEffect = () => {
    * 2. set count to 0, set lock to false and time count to 5
    */
 
-  let timeInterval = null;
   useEffect(() => {
-    timeInterval = setInterval(() => {
-      setTimeCount(timeCount - 1);
-    }, 1000);
+    if (lock && timeInterval === null) {
+      timeInterval = setInterval(() => {
+        setTimeCount((prev) => prev - 1);
+      }, 1000);
+    }
   }, [lock]);
+
+  useEffect(() => {
+    if (timeCount === 0) {
+      clearInterval(timeInterval);
+      setCount(0);
+      setLock(false);
+      setTimeCount(5);
+    }
+  }, [timeCount]);
 
   return (
     <div>
