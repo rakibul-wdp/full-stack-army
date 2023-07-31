@@ -53,10 +53,20 @@ const Example = () => {
       <div>
         <h1>Users</h1>
         <hr />
+        {userLoading && <h3>Loading...!</h3>}
+        {userError && <h3>{userError}</h3>}
+        {users.map((user) => (
+          <li key={user.id}>{user.name}</li>
+        ))}
       </div>
       <div>
         <h1>Posts</h1>
         <hr />
+        {postLoading && <h3>Loading...!</h3>}
+        {postError && <h3>{postError}</h3>}
+        {posts.map((post) => (
+          <li key={post.id}>{post.title}</li>
+        ))}
       </div>
     </div>
   );
