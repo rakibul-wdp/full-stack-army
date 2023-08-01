@@ -1,5 +1,5 @@
 import "./App.css";
-import Example from "./pages/Example";
+import Example2 from "./pages/Example2";
 
 function App() {
   return (
@@ -8,7 +8,8 @@ function App() {
       {/* <UseEffect /> */}
       {/* <AJAX /> */}
       {/* <Counter /> */}
-      <Example />
+      {/* <Example /> */}
+      <Example2 />
     </>
   );
 }
