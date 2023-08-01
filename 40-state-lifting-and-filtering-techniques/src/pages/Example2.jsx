@@ -1,4 +1,5 @@
 import { styled } from "styled-components";
+import Button from "../components/UI/buttons/Button";
 import TextInput from "../components/UI/inputs/TextInput";
 
 const fontSizes = {
@@ -32,6 +33,7 @@ const Example2 = () => {
       </BaseButton>
       <PrimaryButton size="lg">Primary Button</PrimaryButton>
       <TextInput />
+      <Button>Click</Button>
     </div>
   );
 };
