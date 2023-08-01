@@ -1,7 +1,5 @@
 import { styled } from "styled-components";
-import Button from "../components/UI/buttons/Button";
-import TextInput from "../components/UI/inputs/TextInput";
-import Text from "../components/UI/texts/Text";
+import InputGroup from "../components/shared/forms/InputGroup";
 
 const fontSizes = {
   sm: "0.8rem",
@@ -29,18 +27,7 @@ const Example2 = () => {
   return (
     <div>
       <h1>Styled Component</h1>
-      <BaseButton dark size="lg">
-        Button
-      </BaseButton>
-      <PrimaryButton size="lg">Primary Button</PrimaryButton>
-      <TextInput />
-      <Button>Click</Button>
-      <Text size="lg" line="lg">
-        Lorem ipsum dolor sit amet consectetur adipisicing elit. Numquam
-        pariatur maiores in, consequuntur ipsam sed? Ad nemo amet, unde, beatae
-        animi nesciunt consequuntur ducimus incidunt minus, culpa illo tempore
-        doloremque.
-      </Text>
+      <InputGroup />
     </div>
   );
 };
