@@ -11,7 +11,21 @@ const Container = styled.div`
   gap: 1rem;
 `;
 
-const InputGroup = () => {
+const ErrorMessage = styled.div`
+  font-size: 0.8rem;
+  color: red;
+`;
+
+const InputGroup = ({
+  label,
+  name,
+  value,
+  placeholder,
+  error,
+  onChange,
+  onFocus,
+  onBlur,
+}) => {
   return (
     <Container>
       <Text>Label</Text>
