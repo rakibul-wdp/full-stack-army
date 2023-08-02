@@ -1,5 +1,5 @@
 import "./App.css";
-import Example2 from "./pages/Example2";
+import Form from "./pages/Form";
 
 function App() {
   return (
@@ -9,7 +9,8 @@ function App() {
       {/* <AJAX /> */}
       {/* <Counter /> */}
       {/* <Example /> */}
-      <Example2 />
+      {/* <Example2 /> */}
+      <Form />
     </>
   );
 }

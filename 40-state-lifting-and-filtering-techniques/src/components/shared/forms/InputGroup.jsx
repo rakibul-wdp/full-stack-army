@@ -15,7 +15,7 @@ const InputGroup = () => {
   return (
     <Container>
       <Text>Label</Text>
-      <TextInput placeholder="Name" />
+      <TextInput />
     </Container>
   );
 };
