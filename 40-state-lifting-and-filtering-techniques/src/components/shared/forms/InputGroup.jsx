@@ -6,7 +6,7 @@ import TextInput from "../../UI/inputs/TextInput";
 
 const Container = styled.div`
   width: 100%;
-  padding: 1rem;
+  padding: 1rem 2rem;
   border: 1px solid #e1e1e1;
   display: flex;
   flex-direction: column;
@@ -39,6 +39,7 @@ const InputGroup = ({
         onChange={onChange}
         onFocus={onFocus}
         onBlur={onBlur}
+        error={error}
       />
       {error && <ErrorMessage>{error}</ErrorMessage>}
     </Container>
