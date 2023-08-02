@@ -1,5 +1,5 @@
 import "./App.css";
-import CustomizeForm from "./pages/CustomizeForm";
+import FormLibrary from "./pages/FormLibrary";
 
 function App() {
   return (
@@ -11,7 +11,8 @@ function App() {
       {/* <Example /> */}
       {/* <Example2 /> */}
       {/* <Form /> */}
-      <CustomizeForm />
+      {/* <CustomizeForm /> */}
+      <FormLibrary />
     </>
   );
 }
