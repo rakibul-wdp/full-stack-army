@@ -1,10 +1,15 @@
+import { useState } from "react";
+
 const params = {
   init: {},
 };
 
 const useForm = ({ init }) => {
-  const state = mapValuesToState(init);
-  console.log(state);
+  const [state, setState] = useState(mapValuesToState(init));
+
+  return {
+    formState: state,
+  };
 };
 
 // helper function
@@ -16,6 +21,14 @@ const mapValuesToState = (values) => {
       focused: false,
       touched: false,
     };
+
+    return acc;
+  }, {});
+};
+
+const mapStateToValues = (state) => {
+  return Object.keys(state).reduce((acc, cur) => {
+    acc[cur] = state[cur].value;
 
     return acc;
   }, {});
