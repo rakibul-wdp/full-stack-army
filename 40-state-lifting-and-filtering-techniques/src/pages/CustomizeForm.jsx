@@ -28,51 +28,37 @@ const CustomizeForm = () => {
     const oldState = JSON.parse(JSON.stringify(state));
     oldState[name].value = value;
     setState(oldState);
-
-    // const { errors } = checkValidity(values);
-    // if (!errors[key]) {
-    //   setErrors((prev) => ({
-    //     ...prev,
-    //     [key]: "",
-    //   }));
-    // }
   };
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    // const { isValid, errors } = checkValidity(values);
-    // if (isValid) {
-    //   console.log(values);
-    //   setErrors({ ...errors });
-    // } else {
-    //   setErrors({ ...errors });
-    // }
+    const values = Object.keys(state).reduce((acc, cur) => {
+      acc[cur] = state[cur].value;
+
+      return acc;
+    }, {});
+
+    const { isValid, errors } = checkValidity(values);
+    if (isValid) {
+      console.log(state);
+    } else {
+      console.log(errors);
+    }
   };
 
   const handleFocus = (e) => {
-    // setFocuses((prev) => ({
-    //   ...prev,
-    //   [e.target.name]: true,
-    // }));
+    const { name } = e.target;
+    const oldState = JSON.parse(JSON.stringify(state));
+    oldState[name].focus = true;
+    setState(oldState);
   };
 
   const handleBlur = (e) => {
-    // const key = e.target.name;
-    // const { errors } = checkValidity(values);
-    // if (errors[key] && focuses[key]) {
-    //   setErrors((prev) => ({
-    //     ...prev,
-    //     [key]: errors[key],
-    //   }));
-    // } else {
-    //   setErrors((prev) => ({
-    //     ...prev,
-    //     [key]: "",
-    //   }));
-    // }
+    const key = e.target.name;
+    const { errors } = checkValidity(values);
   };
 
-  const checkValidity = () => {
+  const checkValidity = (values) => {
     const errors = {};
     const { title, bio, skills } = values;
     if (!title) {
