@@ -1,5 +1,5 @@
 import "./App.css";
-import Form from "./pages/Form";
+import CustomizeForm from "./pages/CustomizeForm";
 
 function App() {
   return (
@@ -10,7 +10,8 @@ function App() {
       {/* <Counter /> */}
       {/* <Example /> */}
       {/* <Example2 /> */}
-      <Form />
+      {/* <Form /> */}
+      <CustomizeForm />
     </>
   );
 }
