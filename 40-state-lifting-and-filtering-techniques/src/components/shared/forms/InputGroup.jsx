@@ -1,6 +1,6 @@
 import { styled } from "styled-components";
+import Label from "../../UI/inputs/Label";
 import TextInput from "../../UI/inputs/TextInput";
-import Text from "../../UI/texts/Text";
 
 const Container = styled.div`
   width: 100%;
@@ -28,8 +28,17 @@ const InputGroup = ({
 }) => {
   return (
     <Container>
-      <Text>Label</Text>
-      <TextInput />
+      <Label htmlFor={name}>{label}</Label>
+      <TextInput
+        name={name}
+        id={name}
+        placeholder={placeholder ?? ""}
+        value={value}
+        onChange={onChange}
+        onFocus={onFocus}
+        onBlur={onBlur}
+      />
+      {error && <ErrorMessage>{error}</ErrorMessage>}
     </Container>
   );
 };
