@@ -1,6 +1,7 @@
 import { useState } from "react";
 import Button from "../components/UI/buttons/Button";
 import InputGroup from "../components/shared/forms/InputGroup";
+import { deepClone } from "../utils/object-utils";
 
 const init = {
   title: {
@@ -23,39 +24,66 @@ const init = {
 const CustomizeForm = () => {
   const [state, setState] = useState({ ...init });
 
+  const mapStateToValues = (state) => {
+    return Object.keys(state).reduce((acc, cur) => {
+      acc[cur] = state[cur].value;
+
+      return acc;
+    }, {});
+  };
+
   const handleChange = (e) => {
-    const { name, value } = e.target;
-    const oldState = JSON.parse(JSON.stringify(state));
-    oldState[name].value = value;
+    const { name: key, value } = e.target;
+    const oldState = deepClone(state);
+    const values = mapStateToValues(state);
+    oldState[key].value = value;
+    const { errors } = checkValidity(values);
+
+    if (oldState[key].focus && errors[key]) {
+      oldState[key].error = errors[key];
+    } else {
+      oldState[key].error = "";
+    }
+
     setState(oldState);
   };
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    const values = Object.keys(state).reduce((acc, cur) => {
-      acc[cur] = state[cur].value;
-
-      return acc;
-    }, {});
-
+    const values = mapStateToValues(state);
     const { isValid, errors } = checkValidity(values);
+
     if (isValid) {
       console.log(state);
     } else {
-      console.log(errors);
+      const oldState = deepClone(state);
+      Object.keys(errors).forEach((key) => {
+        oldState[key].error = errors[key];
+      });
+
+      setState(oldState);
     }
   };
 
   const handleFocus = (e) => {
     const { name } = e.target;
-    const oldState = JSON.parse(JSON.stringify(state));
+    const oldState = deepClone(state);
     oldState[name].focus = true;
     setState(oldState);
   };
 
   const handleBlur = (e) => {
     const key = e.target.name;
+    const values = mapStateToValues(state);
     const { errors } = checkValidity(values);
+    const oldState = deepClone(state);
+
+    if (oldState[key].focus && errors[key]) {
+      oldState[key].error = errors[key];
+    } else {
+      oldState[key].error = "";
+    }
+    setState(oldState);
   };
 
   const checkValidity = (values) => {
