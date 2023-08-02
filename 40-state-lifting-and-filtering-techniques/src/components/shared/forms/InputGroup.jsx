@@ -1,3 +1,5 @@
+/* eslint-disable react/prop-types */
+
 import { styled } from "styled-components";
 import Label from "../../UI/inputs/Label";
 import TextInput from "../../UI/inputs/TextInput";

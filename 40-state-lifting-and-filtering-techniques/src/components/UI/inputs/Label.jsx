@@ -15,7 +15,6 @@ const lineHeights = {
 const Label = styled.label`
   font-family: Arial;
   font-size: ${(props) => fontSizes[props.size] ?? "1rem"};
-  color: #222;
   line-height: ${(props) => lineHeights[props.line] ?? 1.3};
   user-select: none;
 `;
