@@ -22,7 +22,8 @@ const init = {
 };
 
 const CustomizeForm = () => {
-  const [state, setState] = useState({ ...init });
+  const [state, setState] = useState(deepClone(init));
+  const [hasError, setHasError] = useState(false);
 
   const mapStateToValues = (state) => {
     return Object.keys(state).reduce((acc, cur) => {
@@ -138,7 +139,9 @@ const CustomizeForm = () => {
           onFocus={handleFocus}
           onBlur={handleBlur}
         />
-        <Button type="submit">Submit</Button>
+        <Button disabled={hasError} type="submit">
+          Submit
+        </Button>
       </form>
     </div>
   );
