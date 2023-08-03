@@ -1,3 +1,4 @@
+import InputGroup from "../components/shared/forms/InputGroup";
 import useForm from "../hooks/useForm";
 
 const init = {
@@ -30,11 +31,61 @@ const validate = (values) => {
 };
 
 const FormLibrary = () => {
-  const { formState } = useForm({ init, validate });
+  const {
+    formState: state,
+    handleBlur,
+    handleChange,
+    handleFocus,
+    handleSubmit,
+    clear,
+  } = useForm({ init, validate });
 
-  console.log(formState);
-
-  return <div>FormLibrary</div>;
+  return (
+    <div style={{ width: "50%", margin: "0 auto" }}>
+      <form onSubmit={handleSubmit}>
+        <InputGroup
+          value={state.firstName.value}
+          label={"First Name"}
+          name={"firstName"}
+          placeholder={"John"}
+          onChange={handleChange}
+          error={state.firstName.error}
+          onFocus={handleFocus}
+          onBlur={handleBlur}
+        />
+        <InputGroup
+          value={state.lastName.value}
+          label={"Last Name"}
+          name={"lastName"}
+          placeholder={"Doe"}
+          onChange={handleChange}
+          error={state.lastName.error}
+          onFocus={handleFocus}
+          onBlur={handleBlur}
+        />
+        <InputGroup
+          value={state.email.value}
+          label={"Email"}
+          name={"email"}
+          placeholder={"test@example.com"}
+          onChange={handleChange}
+          error={state.email.error}
+          onFocus={handleFocus}
+          onBlur={handleBlur}
+        />
+        <InputGroup
+          value={state.password.value}
+          label={"Password"}
+          name={"password"}
+          placeholder={"********"}
+          onChange={handleChange}
+          error={state.password.error}
+          onFocus={handleFocus}
+          onBlur={handleBlur}
+        />
+      </form>
+    </div>
+  );
 };
 
 export default FormLibrary;
