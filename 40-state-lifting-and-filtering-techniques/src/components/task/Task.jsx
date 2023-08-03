@@ -1,4 +1,4 @@
-import useForm from "../hooks/useForm";
+import useForm from "../../hooks/useForm";
 
 const init = {
   text: "",
@@ -6,16 +6,22 @@ const init = {
 };
 
 const Task = () => {
-  const { formState, handleChange } = useForm({ init, validate: true });
+  const { formState, handleChange, handleSubmit } = useForm({
+    init,
+    validate: true,
+  });
+
+  const submitCB = ({ values }) => {
+    alert(JSON.stringify(values));
+  };
 
   return (
     <div>
-      <form>
+      <form onSubmit={(e) => handleSubmit(e, submitCB)}>
         <input
           type="checkbox"
-          name="checkbox"
-          checked={formState.checkbox.value}
-          value={formState.checkbox.value}
+          name="checked"
+          checked={formState.checked.value}
           onChange={handleChange}
         />
         <input
