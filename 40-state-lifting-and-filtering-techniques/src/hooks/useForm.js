@@ -1,4 +1,5 @@
 import { useState } from "react";
+import { deepClone } from "../utils/object-utils";
 
 /**
  * @typedef {Object} Param
@@ -13,10 +14,31 @@ import { useState } from "react";
 const useForm = ({ init, validate }) => {
   const [state, setState] = useState(mapValuesToState(init));
 
+  const handleChange = (e) => {
+    const { name: key, value } = e.target;
+
+    const oldState = deepClone(state);
+    oldState[key].value = value;
+
+    const values = mapStateToValues(state);
+    const { errors } = checkValidity(values);
+
+    if (oldState[key].touched && errors[key]) {
+      oldState[key].error = errors[key];
+    } else {
+      oldState[key].error = "";
+    }
+
+    setState(oldState);
+  };
+
   return {
     formState: state,
+    handleChange,
   };
 };
+
+export default useForm;
 
 // helper function
 const mapValuesToState = (values) => {
@@ -39,5 +61,3 @@ const mapStateToValues = (state) => {
     return acc;
   }, {});
 };
-
-export default useForm;
