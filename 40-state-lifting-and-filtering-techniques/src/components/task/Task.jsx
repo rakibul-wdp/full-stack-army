@@ -3,6 +3,7 @@ import useForm from "../../hooks/useForm";
 const init = {
   text: "",
   checked: false,
+  group: "home",
 };
 
 const Task = () => {
@@ -30,6 +31,14 @@ const Task = () => {
           value={formState.text.value}
           onChange={handleChange}
         />
+        <select
+          name="group"
+          value={formState.group.value}
+          onChange={handleChange}
+        >
+          <option value="home">Home</option>
+          <option value="office">Office</option>
+        </select>
         <button>Submit</button>
       </form>
     </div>
