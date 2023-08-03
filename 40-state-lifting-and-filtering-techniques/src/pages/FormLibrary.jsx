@@ -1,3 +1,4 @@
+import Button from "../components/UI/buttons/Button";
 import InputGroup from "../components/shared/forms/InputGroup";
 import useForm from "../hooks/useForm";
 
@@ -83,6 +84,12 @@ const FormLibrary = () => {
           onFocus={handleFocus}
           onBlur={handleBlur}
         />
+        <div>
+          <Button type="reset" onClick={clear}>
+            Clear
+          </Button>
+          <Button type="submit">Submit</Button>
+        </div>
       </form>
     </div>
   );

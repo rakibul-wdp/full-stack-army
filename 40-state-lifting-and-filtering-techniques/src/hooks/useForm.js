@@ -1,5 +1,5 @@
 import { useState } from "react";
-import { deepClone, isEmpty } from "../utils/object-utils";
+import { deepClone, isObjEmpty } from "../utils/object-utils";
 
 /**
  * @typedef {Object} Param
@@ -81,14 +81,14 @@ const useForm = ({ init, validate }) => {
     let hasError = null,
       errors = null;
 
-    const values = mapStateToKeys(state, "values");
+    const values = mapStateToKeys(state, "value");
 
     if (typeof validate === "boolean") {
       hasError = validate;
       errors = mapStateToKeys(state, "error");
     } else if (typeof validate === "function") {
-      const { errors: errorsFromCB } = validate(values);
-      const hasError = !isEmpty(errorsFromCB);
+      const errorsFromCB = validate(values);
+      const hasError = !isObjEmpty(errorsFromCB);
       errors = errorsFromCB;
     } else {
       throw new Error("validate property must be boolean or function");
