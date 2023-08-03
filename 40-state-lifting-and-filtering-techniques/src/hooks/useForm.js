@@ -1,10 +1,16 @@
 import { useState } from "react";
 
-const params = {
-  init: {},
-};
+/**
+ * @typedef {Object} Param
+ * @property {Object} init
+ * @property {(Object/boolean)} validate
+ *
+ * create forms using this useForm hook easily
+ * @param {Param} param
+ * @returns
+ */
 
-const useForm = ({ init }) => {
+const useForm = ({ init, validate }) => {
   const [state, setState] = useState(mapValuesToState(init));
 
   return {
