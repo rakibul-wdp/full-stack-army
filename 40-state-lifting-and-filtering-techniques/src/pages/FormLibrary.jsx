@@ -41,9 +41,17 @@ const FormLibrary = () => {
     clear,
   } = useForm({ init, validate });
 
+  const cb = ({ hasError, values, errors }) => {
+    if (hasError) {
+      alert("[ERROR]" + JSON.stringify(errors));
+    } else {
+      alert("[SUCCESS]" + JSON.stringify(values));
+    }
+  };
+
   return (
     <div style={{ width: "50%", margin: "0 auto" }}>
-      <form onSubmit={handleSubmit}>
+      <form onSubmit={(e) => handleSubmit(e, cb)}>
         <InputGroup
           value={state.firstName.value}
           label={"First Name"}

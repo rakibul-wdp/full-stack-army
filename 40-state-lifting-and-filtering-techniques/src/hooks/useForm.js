@@ -88,7 +88,7 @@ const useForm = ({ init, validate }) => {
       errors = mapStateToKeys(state, "error");
     } else if (typeof validate === "function") {
       const errorsFromCB = validate(values);
-      const hasError = !isObjEmpty(errorsFromCB);
+      hasError = !isObjEmpty(errorsFromCB);
       errors = errorsFromCB;
     } else {
       throw new Error("validate property must be boolean or function");
