@@ -32,9 +32,42 @@ const useForm = ({ init, validate }) => {
     setState(oldState);
   };
 
+  const handleFocus = (e) => {
+    const { name } = e.target;
+
+    const oldState = deepClone(state);
+    oldState[name].focused = true;
+
+    if (!oldState[name].touched) {
+      oldState[name].touched = true;
+    }
+
+    setState(oldState);
+  };
+
+  const handleBlur = (e) => {
+    const key = e.target.name;
+
+    const values = mapStateToValues(state);
+    const { errors } = checkValidity(values);
+
+    const oldState = deepClone(state);
+
+    if (oldState[key].touched && errors[key]) {
+      oldState[key].error = errors[key];
+    } else {
+      oldState[key].error = "";
+    }
+
+    oldState[key].focused = false;
+    setState(oldState);
+  };
+
   return {
     formState: state,
     handleChange,
+    handleFocus,
+    handleBlur,
   };
 };
 
