@@ -5,6 +5,7 @@ const init = {
   checked: false,
   group: "home",
   priority: "medium",
+  file: null,
 };
 
 const Task = () => {
@@ -61,6 +62,12 @@ const Task = () => {
           onChange={handleChange}
         />
         High
+        <input
+          type="file"
+          name="file"
+          value={formState.file.value}
+          onChange={handleChange}
+        />
         <button>Submit</button>
       </form>
     </div>
