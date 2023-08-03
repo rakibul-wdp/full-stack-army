@@ -4,6 +4,7 @@ const init = {
   text: "",
   checked: false,
   group: "home",
+  priority: "medium",
 };
 
 const Task = () => {
@@ -13,7 +14,7 @@ const Task = () => {
   });
 
   const submitCB = ({ values }) => {
-    alert(JSON.stringify(values));
+    console.log(values);
   };
 
   return (
@@ -39,6 +40,27 @@ const Task = () => {
           <option value="home">Home</option>
           <option value="office">Office</option>
         </select>
+        <input
+          type="radio"
+          name="priority"
+          value={"low"}
+          onChange={handleChange}
+        />
+        Low
+        <input
+          type="radio"
+          name="priority"
+          value={"medium"}
+          onChange={handleChange}
+        />
+        Medium
+        <input
+          type="radio"
+          name="priority"
+          value={"high"}
+          onChange={handleChange}
+        />
+        High
         <button>Submit</button>
       </form>
     </div>
