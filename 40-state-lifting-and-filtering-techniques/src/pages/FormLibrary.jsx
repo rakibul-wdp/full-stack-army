@@ -1,13 +1,7 @@
 import useForm from "../hooks/useForm";
 
 const FormLibrary = () => {
-  const { formState } = useForm({
-    init: {
-      name: "Abul",
-      email: "",
-      password: "",
-    },
-  });
+  const { formState } = useForm({});
 
   console.log(formState);
 

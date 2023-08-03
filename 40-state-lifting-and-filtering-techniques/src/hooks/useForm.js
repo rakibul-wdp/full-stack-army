@@ -72,6 +72,11 @@ const useForm = ({ init, validate }) => {
     });
   };
 
+  const clear = () => {
+    const newState = mapValuesToState(init, true);
+    setState(newState);
+  };
+
   const getErrors = () => {
     let hasError = null,
       errors = null;
@@ -102,16 +107,17 @@ const useForm = ({ init, validate }) => {
     handleFocus,
     handleBlur,
     handleSubmit,
+    clear,
   };
 };
 
 export default useForm;
 
 // helper function
-const mapValuesToState = (values) => {
+const mapValuesToState = (values, shouldClear = false) => {
   return Object.keys(values).reduce((acc, key) => {
     acc[key] = {
-      value: values[key],
+      value: shouldClear ? "" : values[key],
       error: "",
       focused: false,
       touched: false,
