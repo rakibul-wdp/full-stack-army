@@ -1,5 +1,5 @@
 import { useState } from "react";
-import { deepClone } from "../utils/object-utils";
+import { deepClone, isObjEmpty } from "../utils/object-utils";
 
 /**
  * @typedef {Object} Param
@@ -72,7 +72,35 @@ const useForm = ({ init, validate }) => {
           values: mapStateToKeys(state, "value"),
           touched: mapStateToKeys(state, "touched"),
           focused: mapStateToKeys(state, "focused"),
+          error: mapStateToKeys(state, "error"),
           hasError: false,
+        });
+      } else {
+        cb({
+          errors: mapStateToKeys(state, "error"),
+          hasError: true,
+        });
+      }
+      return;
+    }
+
+    if (typeof validate === "function") {
+      const values = mapStateToKeys(state, "values");
+      const { errors } = validate(values);
+      const hasError = !isObjEmpty(errors);
+
+      if (hasError) {
+        cb({
+          errors,
+          hasError,
+        });
+      } else {
+        cb({
+          values: mapStateToKeys(state, "value"),
+          touched: mapStateToKeys(state, "touched"),
+          focused: mapStateToKeys(state, "focused"),
+          error: mapStateToKeys(state, "error"),
+          hasError,
         });
       }
     }
