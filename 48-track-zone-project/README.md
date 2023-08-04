@@ -47,3 +47,13 @@
 - delete clock
 - calculate difference
 - update events
+
+### Event Features
+
+- properties
+- create event
+- delete event
+- update event
+- filter events by clock
+- get event by id
+- get events by ids
