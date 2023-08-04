@@ -27,7 +27,7 @@
   - timezone
     - type (UTC, GMT, PST, EST)
     - offset
-  - event
+  - event [event1, event2, event3]
 
 - Event Object will look like
   - id
@@ -39,3 +39,11 @@
 - We will use a clock object for local clock.
 - And use an array of clocks for other clocks.
 - We will use event id to create events inside clock
+
+### Clock Features
+
+- properties
+- update clock
+- delete clock
+- calculate difference
+- update events
