@@ -1,4 +1,4 @@
-### Track Zone Project Overview
+## Track Zone Project Overview
 
 - User can set their own time and timezone, this clock can't be deleted only be edited
 - User can create as many clock as they want
@@ -11,13 +11,13 @@
 - Only date-fns library is allowed for this project, res of the logic should write by myself
 - Every data must be validated
 
-### What to submit?
+## What to submit?
 
 - A proper breakdown of the requirements
 - Component Tree and Data Flow
 - Finally, Proper use of components and custom hooks
 
-### Requirements Breakdown
+## Requirements Breakdown
 
 - We will have a local clock and a list of clocks
 - Clock Object will look like
