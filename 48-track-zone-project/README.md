@@ -16,3 +16,26 @@
 - A proper breakdown of the requirements
 - Component Tree and Data Flow
 - Finally, Proper use of components and custom hooks
+
+### Requirements Breakdown
+
+- We will have a local clock and a list of clocks
+- Clock Object will look like
+
+  - id
+  - title
+  - timezone
+    - type (UTC, GMT, PST, EST)
+    - offset
+  - event
+
+- Event Object will look like
+  - id
+  - clockId
+  - text
+  - timezone
+  - startTime
+  - endTime
+- We will use a clock object for local clock.
+- And use an array of clocks for other clocks.
+- We will use event id to create events inside clock
