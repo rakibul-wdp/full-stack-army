@@ -20,6 +20,7 @@
 ## Requirements Breakdown
 
 - We will have a local clock and a list of clocks
+- We will create the initial clock from users timezone
 - Clock Object will look like
 
   - id
