@@ -1,5 +1,13 @@
+import ClockList from "./components/clock-list";
+import LocalClock from "./components/local-clock";
+
 const App = () => {
-  return <h1>App</h1>;
+  return (
+    <div>
+      <LocalClock />
+      <ClockList />
+    </div>
+  );
 };
 
 export default App;
