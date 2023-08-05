@@ -8,19 +8,46 @@ const init = {
     type: "",
     offset: "",
   },
-  date_utc0: null,
+  date_utc: null,
   date: null,
 };
 
-const useClock = (date, timezone, type) => {
+const TIMEZONE_OFFSET = {
+  PST: -7 * 60,
+  EST: -4 * 60,
+  EDT: -4 * 60,
+  BST: 1 * 60,
+  MST: -6 * 60,
+};
+
+const useClock = (timezone, offset = 0) => {
   const [state, setState] = useState({ ...init });
+  const [utc, setUTC] = useState(null);
 
   useEffect(() => {
-    let d = new Date(date);
-    const offset = d.getTimezoneOffset();
-    d = addMinutes(d, offset);
-    console.log(d.toLocaleString());
+    let d = new Date();
+    const localOffset = d.getTimezoneOffset();
+    d = addMinutes(d, localOffset);
+    setUTC(d);
   }, []);
+
+  useEffect(() => {
+    if (utc !== null && timezone) {
+      offset = TIMEZONE_OFFSET[timezone] ?? offset;
+      const newUtc = addMinutes(utc, offset);
+      setState({
+        ...state,
+        date_utc: utc,
+        date: newUtc,
+      });
+    } else {
+      setState({
+        ...state,
+        date_utc: utc,
+        date: utc,
+      });
+    }
+  }, [utc]);
 
   return {
     clock: state,
