@@ -22,6 +22,21 @@ const useClock = (timezone, offset) => {
     setUTC(d);
     setLocalOffset(lo);
   }, []);
+
+  useEffect(() => {
+    if (utc !== null) {
+      if (timezone) {
+        offset = TIMEZONE_OFFSET[timezone] ?? offset;
+        const newUtc = addMinutes(utc, offset);
+        setLocalDate(newUtc);
+      } else {
+        const newUtc = addMinutes(utc, -localOffset);
+        const dateStrArr = newUtc.toUTCString().split(" ");
+        setLocalDate(newUtc);
+        setLocalTimezone(dateStrArr.pop());
+      }
+    }
+  }, [utc, timezone, offset]);
 };
 
 export default useClock;
