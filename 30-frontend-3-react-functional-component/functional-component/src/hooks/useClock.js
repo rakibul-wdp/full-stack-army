@@ -37,6 +37,13 @@ const useClock = (timezone, offset) => {
       }
     }
   }, [utc, timezone, offset]);
+
+  return {
+    date: localDate,
+    dateUTC: utc,
+    offset: offset || -localOffset,
+    timezone: timezone || localTimezone,
+  };
 };
 
 export default useClock;
