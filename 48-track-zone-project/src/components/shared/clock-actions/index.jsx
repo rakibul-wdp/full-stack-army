@@ -10,7 +10,7 @@ const ClockActions = ({ local = false, clock, updateClock }) => {
   const handleChange = (e) => {
     let { name, value } = e.target;
     if (name === "offset") {
-      value = parseInt(value) * 60;
+      value = Number(value) * 60;
     }
     updateClock({
       [name]: value,
