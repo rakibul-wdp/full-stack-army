@@ -4,14 +4,45 @@
  * 3. for edit we will have title, timezone, offset
  */
 
+import { useState } from "react";
+
 // const values = {
 //   title: "",
 //   timezone: "",
 //   offset: 0,
 // };
 
-const ClockForm = ({ values, title = true }) => {
-  return <form>ClockForm</form>;
+const ClockForm = ({ values, handleClock, title = true }) => {
+  const [formValues, setFormValues] = useState({ ...values });
+
+  const handleChange = (e) => {
+    const [name, value] = e.target;
+
+    setFormValues({
+      ...formValues,
+      [name]: value,
+    });
+  };
+
+  const handleSubmit = (e) => {
+    e.preventDefault();
+    handleClock(formValues);
+  };
+
+  return (
+    <form onSubmit={handleSubmit}>
+      <div>
+        <label htmlFor="title">Enter Title</label>
+        <input
+          type="text"
+          name="title"
+          id="title"
+          value={formValues.title}
+          onChange={handleChange}
+        />
+      </div>
+    </form>
+  );
 };
 
 export default ClockForm;
