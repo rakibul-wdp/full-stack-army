@@ -12,7 +12,7 @@ import { useState } from "react";
 //   offset: 0,
 // };
 
-const ClockForm = ({ values, handleClock, title = true }) => {
+const ClockForm = ({ values, handleClock, title = true, edit = false }) => {
   const [formValues, setFormValues] = useState({ ...values });
 
   const handleChange = (e) => {
@@ -39,8 +39,30 @@ const ClockForm = ({ values, handleClock, title = true }) => {
           id="title"
           value={formValues.title}
           onChange={handleChange}
+          disabled={!title}
         />
       </div>
+      <div>
+        <label htmlFor="timezone">Enter Timezone</label>
+        <input
+          type="text"
+          name="timezone"
+          id="timezone"
+          value={formValues.timezone}
+          onChange={handleChange}
+        />
+      </div>
+      <div>
+        <label htmlFor="offset">Enter Offset</label>
+        <input
+          type="text"
+          name="offset"
+          id="offset"
+          value={formValues.offset}
+          onChange={handleChange}
+        />
+      </div>
+      <button>{edit ? "Update" : "Create"}</button>
     </form>
   );
 };
