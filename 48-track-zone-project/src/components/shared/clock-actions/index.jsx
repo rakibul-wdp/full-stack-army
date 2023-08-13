@@ -43,7 +43,11 @@ const ClockActions = ({ local = false, clock, updateClock }) => {
             <option value="MST">MST</option>
           </select>
           {(clock.timezone === "GMT" || clock.timezone === "UTC") && (
-            <select name="offset" value={clock.offset} onChange={handleChange}>
+            <select
+              name="offset"
+              value={clock.offset / 60}
+              onChange={handleChange}
+            >
               {defaultOffsets.map((offset) => (
                 <option key={offset} value={offset}>
                   {offset}
