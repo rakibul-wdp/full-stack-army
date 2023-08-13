@@ -1,23 +1,27 @@
 import { useState } from "react";
 import ClockList from "./components/clock-list";
 import LocalClock from "./components/local-clock";
-import useClock from "./hooks/useClock";
 
 const LOCAL_CLOCK_INIT = {
   title: "",
-  timezone: {
-    type: "",
-    offset: 0,
-  },
+  timezone: "",
+  offset: 0,
   date: null,
 };
 
 const App = () => {
   const [localClock, setLocalClock] = useState({ ...LOCAL_CLOCK_INIT });
 
+  const updateLocalClock = (date) => {
+    setLocalClock({
+      ...localClock,
+      ...data,
+    });
+  };
+
   return (
     <div>
-      {localDate !== null && <LocalClock clock={localClock} />}
+      <LocalClock clock={localClock} updateClock={updateLocalClock} />
       <ClockList />
     </div>
   );
