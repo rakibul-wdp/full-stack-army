@@ -13,6 +13,7 @@ import Products from "./pages/Products";
 import Props from "./pages/Props";
 import State from "./pages/State";
 import Tasks from "./pages/Tasks";
+import TrackZone from "./pages/TrackZone";
 
 function App() {
   return (
@@ -32,6 +33,7 @@ function App() {
           <Route path="/json-jsx" element={<JsonJsx />} />
           <Route path="/calculator" element={<Calculator />} />
           <Route path="cal-practice" element={<CalculatorPractice />} />
+          <Route path="track-zone" element={<TrackZone />} />
         </Routes>
       </BrowserRouter>
     </div>
