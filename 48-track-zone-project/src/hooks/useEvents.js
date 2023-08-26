@@ -38,4 +38,26 @@ const useEvents = () => {
 
     setState(events);
   };
+
+  const updateEvent = (updatedEvent, id) => {
+    const events = { ...state };
+    events[id] = {
+      ...events[id],
+      ...updatedEvent,
+    };
+
+    setState(events);
+  };
+
+  return {
+    events: state,
+    getEventsByClockId,
+    getEvents,
+    addEvent,
+    deleteEvent,
+    deleteEventByClock,
+    updateEvent,
+  };
 };
+
+export default useEvents;
