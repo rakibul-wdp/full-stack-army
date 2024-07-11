@@ -28,8 +28,8 @@ const PlaylistForm = ({ open, handleClose, getPlaylistId }) => {
       <DialogContent>
         <DialogContentText>
           To add a new playlist please insert the playlist id or playlist link.
-          Please make sure the link is correct. Otherwise we won't able to fetch
-          the playlist information.
+          Please make sure the link is correct. Otherwise we won&apos;t able to
+          fetch the playlist information.
         </DialogContentText>
         <TextField
           autoFocus
