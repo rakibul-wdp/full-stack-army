@@ -18,3 +18,29 @@ const compile = (src, output) => {
 
 // compile the global css
 compile("src/global.scss", "lib/global.css");
+
+/**
+ * Get All Components from atoms, molecules and organisms
+ * @returns Object[] return array of object containing src and output
+ */
+const getComponents = () => {
+  let allComponents = [];
+
+  const types = ["atoms", "molecules", "organisms"];
+
+  types.forEach((type) => {
+    const allFiles = fs.readdirSync(`src/${type}`).map((file) => ({
+      src: `src/${type}/${file}`,
+      output: `lib/${file.slice(0, -5)}.css`,
+    }));
+
+    allComponents = [...allComponents, ...allFiles];
+  });
+
+  return allComponents;
+};
+
+// compile components
+getComponents().forEach((component) =>
+  compile(component.src, component.output)
+);
