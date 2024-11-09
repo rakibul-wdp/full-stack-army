@@ -26,5 +26,6 @@ An experienced senior backend engineer should have a broad range of technical sk
 4. Performance Optimization: An experienced senior backend engineer should have extensive experience optimizing application performance through techniques such as caching, load balancing, and database tuning. They should be able to identify performance bottlenecks and optimize code accordingly.
 5. DevOps and Continuous Integration/Continuous Deployment (CI/CD): An experienced senior backend engineer should be familiar with DevOps principles and practices, including containerization, deployment automation, and monitoring. They should have extensive experience setting up and maintaining CI/CD pipelines.
 6. Leadership and Mentoring: An experienced senior backend engineer should have strong leadership and mentoring skills. They should be able to guide and mentor junior and mid-level developers, as well as collaborate effectively with cross-functional teams.
+7. Communication and Collaboration: An experienced senior backend engineer should have excellent communication and collaboration skills. They should be able to communicate technical concepts to no-technical stakeholders, collaborate with cross-functional teams, and lead code review and team meetings.
 
 ### How to learn? | When to start self learning?
