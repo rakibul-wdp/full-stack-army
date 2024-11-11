@@ -28,5 +28,6 @@ An experienced senior backend engineer should have a broad range of technical sk
 6. Leadership and Mentoring: An experienced senior backend engineer should have strong leadership and mentoring skills. They should be able to guide and mentor junior and mid-level developers, as well as collaborate effectively with cross-functional teams.
 7. Communication and Collaboration: An experienced senior backend engineer should have excellent communication and collaboration skills. They should be able to communicate technical concepts to no-technical stakeholders, collaborate with cross-functional teams, and lead code review and team meetings.
 8. Problem-Solving and Critical Thinking: An experienced senior backend engineer should be a strong problem solver and critical thinker. They should be able to analyze complex problems, identify root causes, and propose effective solutions.
+9. Data Modeling and Database Engineering: An experienced senior backed engineer should have expertise in data modeling and database engineering. They should be able to design efficient database schemas, optimize queries, and manage database backups and restores.
 
 ### How to learn? | When to start self learning?
