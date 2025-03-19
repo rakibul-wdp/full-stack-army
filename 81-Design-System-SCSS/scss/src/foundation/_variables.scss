@@ -21,6 +21,9 @@
 
   * SPACING
   * Spacing.....................Global fixed set of spacing variables.
+
+  * SHADOW
+  * Shadows.....................Global fixed set of shadows
 */
 
 /*=============================================
@@ -156,3 +159,13 @@ $spacing: (
 ) !default;
 
 /*=====  End of Spacing  ======*/
+
+/*=============================================
+=                  Shadows                    =
+=============================================*/
+
+$shadows: (
+  base: 0 4px 11px rgba(157, 157, 157, 0.21),
+);
+
+/*=====  End of Shadows  ======*/
