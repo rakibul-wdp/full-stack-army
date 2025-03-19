@@ -1,4 +1,6 @@
-// Variables
+/*=============================================
+    #Variables
+=============================================*/
 
 /*
   * TABLE OF CONTENTS
@@ -21,7 +23,9 @@
   * Spacing.....................Global fixed set of spacing variables.
 */
 
-// Colors
+/*=============================================
+=            Colors                           =
+=============================================*/
 
 // Brand Color
 $green: #5ece7b;
@@ -43,3 +47,23 @@ $red-light: #f8dedf;
 
 $blue: #0468db;
 $blue-light: #b4d2f4;
+
+/*=====  End of Colors  ======*/
+
+/*=============================================
+=                 Typography                  =
+=============================================*/
+
+/* Font Families */
+
+/**
+ *
+ * 1) The playfair font. We'll use this for headings mostly.
+ *     https://fonts.google.com/specimen/Playfair+Display
+ *
+ * 2) The raleway font. We'll use this for the body text.
+ *     https://fonts.google.com/specimen/Raleway
+ */
+
+$playfair: "Playfair Display", serif; /* 1 */
+$raleway: "Raleway", "HelveticaNeue", "Helvetica", sans-serif; /* 2 */
