@@ -11,5 +11,8 @@
       "packages/*"
     ]
   },
-  "private": true
+  "private": true,
+  "scripts": {
+    "build": "yarn lerna run build"
+  }
 }
