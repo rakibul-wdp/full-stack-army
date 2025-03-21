@@ -1,5 +1,4 @@
 import { Button } from "@ds.e/react/lib";
-import "@ds.e/scss/lib/Button.css";
 
 function App() {
   return (
