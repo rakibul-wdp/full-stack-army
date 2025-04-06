@@ -39,12 +39,13 @@ Overall, and experienced senior backend engineer should have a broad range of te
 - Tools
   - Virtual Box
   - Server
-- Any Programming Language
+- Any Programming Language (\*js)
 - Operating System (Linux)
 - Basic Networking
 - A Lot of Patience
 - A Lot of Practice
 - A Lot of Failure
 - A Lot of Experiment
+- Ready for Any Kind of Challenge
 
 ### How to learn? | When to start self learning?
