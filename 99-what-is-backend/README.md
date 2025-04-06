@@ -21,5 +21,7 @@
 An experienced senior backend engineer should have a broad range of technical skills, as well as strong soft skills that enable them to lead and mentor others effectively. Here are some of the key skills that an experienced senior backend engineer should have:
 
 1. Expertise in Backend Technologies: An experienced senior backend engineer should have deep knowledge of backend technologies such as Node.js, Python, Ruby, and databases such as PostgreSQL, MongoDB, and Redis. They should have a good understanding of how these technologies work and how to use them effectively.
+2. System Design and Architecture: An experienced senior backend engineer should have strong understanding of system design and architecture principles. They should be able to design and implement scalable, reliable, and maintainable systems that meet business requirements.
+3.
 
 ### How to learn? | When to start self learning?
