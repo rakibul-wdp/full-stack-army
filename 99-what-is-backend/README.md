@@ -31,4 +31,20 @@ An experienced senior backend engineer should have a broad range of technical sk
 9. Data Modeling and Database Engineering: An experienced senior backed engineer should have expertise in data modeling and database engineering. They should be able to design efficient database schemas, optimize queries, and manage database backups and restores.
 10. Security and Compliance: An experienced senior backend engineer should have extensive experience designing and implementing secure systems that meet compliance requirements. They should be familiar with best practices for data encryption, access control, and vulnerability management.
 
+Overall, and experienced senior backend engineer should have a broad range of technical skills and strong soft skills that enable them to design, build, and maintain complex backend systems that meet business requirements. They should have a deep understanding of backend technologies, system design and architecture principles, API design and development, performance optimization, DevOps and CI/CD practices, leadership and mentoring, communication and collaboration, problem-solving and critical thinking, data modeling and database engineering, and security and compliance.
+
+### Requirements
+
+- **Backend Development is Expensive.**
+- Tools
+  - Virtual Box
+  - Server
+- Any Programming Language
+- Operating System (Linux)
+- Basic Networking
+- A Lot of Patience
+- A Lot of Practice
+- A Lot of Failure
+- A Lot of Experiment
+
 ### How to learn? | When to start self learning?
